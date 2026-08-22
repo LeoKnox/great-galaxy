@@ -6,7 +6,7 @@ export default function App() {
 
       <div style={{ height: "100vh", width: "100vw" }}>
        <Canvas>
-      <mesh rotation={[0.5, 0.5, 0]}>
+      <mesh rotation={[0.5, 0.5, 0]} position={[0, -1, 1]}>
         <boxGeometry />
         <meshBasicMaterial color="gray+" />
       </mesh>
