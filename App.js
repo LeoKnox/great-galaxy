@@ -5,15 +5,15 @@ export default function App() {
   return (
       <div style={{ height: "100vh", width: "100vw" }}>
        <Canvas>
-      <mesh rotation={[100, 0, 0]} position={[0, 0, 0]}>
+      <mesh rotation={[0, 0, 0]} position={[0, 0, 0]}>
         <planeGeometry  args={[3,3]}/>
         <meshBasicMaterial color="darkgray" />
       </mesh>
-      <mesh rotation={[100, 0, 0]} position={[3, 0, 0]}>
+      <mesh rotation={[0, 0, 0]} position={[3, 0, 0]}>
         <planeGeometry  args={[3,3]}/>
         <meshBasicMaterial color="gray" />
       </mesh>
-      <mesh rotation={[100, 0, 0]} position={[0, 0, -3]}>
+      <mesh rotation={[0, 0, 0]} position={[0, 3, 0]}>
         <planeGeometry  args={[3,3]}/>
         <meshBasicMaterial color="gray" />
       </mesh>
