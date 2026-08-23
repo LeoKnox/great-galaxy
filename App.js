@@ -3,20 +3,20 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 export default function App() {
   const squares = [
-    { position: [-1, 1, 0], color: "#6B6361" },
-    { position: [1, 1, 0], color: "#94908F" },
-    { position: [-1, -1, 0], color: "#94908F" },
-    { position: [1, -1, 0], color: "#6B6361" },
+    { position: [-1, 1, 0], color: "red" },
+    { position: [1, 1, 0], color: "green" },
+    { position: [-1, -1, 0], color: "blue" },
+    { position: [1, -1, 0], color: "yellow" },
   ];
   return (
       <div style={{ height: "100vh", width: "100vw" }}>
        <Canvas>
-<group rotation={[70, 0, 0]} position={[-1.5, 0, 0]} >
+<group rotation={[-70, 0, 0]} position={[0, 0, 0]} >
 {squares.map((square, index) => (
         <mesh key={index} position={square.position}>
           <planeGeometry args={[2, 2]} />
           <meshStandardMaterial
-            color={square.color}
+            color={square.position}
             
           />
         </mesh>
