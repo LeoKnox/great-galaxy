@@ -7,14 +7,16 @@ export default function App() {
     { position: [2, 2, 0], color: "#bcc0cc" },
     { position: [0, 0, 0], color: "#bcc0cc" },
     { position: [2, 0, 0], color: "#8e9199" },
+    { position: [4, 0, 0],rotation: [90, 0,0], color: "#8e9199" },
   ];
+  const checker = []
   return (
       <div style={{ height: "100vh", width: "100vw" }}>
        <Canvas>
        <ambientLight intensity={1} />
-<group rotation={[-70, 0, 0]} position={[-1, 0, 0]} >
+<group rotation={[-70, 0, 0]} position={[-1.5, 0, 0]} >
 {squares.map((square, index) => (
-        <mesh key={index} position={square.position}>
+        <mesh key={index} position={square.position} rotation={square.rotation}>
           <planeGeometry args={[2, 2]} />
           <meshStandardMaterial
             color={square.color}
