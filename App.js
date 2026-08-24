@@ -7,7 +7,7 @@ export default function App() {
     { position: [2, 2, 0], color: "#bcc0cc" },
     { position: [0, 0, 0], color: "#bcc0cc" },
     { position: [2, 0, 0], color: "#8e9199" },
-    { position: [4, 0, 0],rotation: [90, 0,0], color: "#8e9199" },
+    { position: [4, -1, .5],rotation: [90, 0,0], color: "#bcc0cc" },
   ];
   const checker = []
   return (
