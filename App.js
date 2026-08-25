@@ -22,13 +22,14 @@ export default function App() {
             color={square.color}
             
           />
-        </mesh>
-      ))}
-      </group>
-      <mesh position={[2.5, 0, 1]}>
+          <mesh position={[3.5, 0, 1]}>
         <boxGeometry args={[2, 1, 1]}/>
         <meshBasicMaterial color="gray" />
       </mesh>
+        </mesh>
+      ))}
+      </group>
+      
     </Canvas>
     </div>
 
