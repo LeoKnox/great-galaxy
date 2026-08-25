@@ -27,6 +27,8 @@ export default function App() {
       </mesh>
         </mesh>
       ))}
+      
+      </group>
       <group>
         <mesh position={[0, 0.25, 0]}>
         <boxGeometry args={[2, 0.5, 1]} />
@@ -37,8 +39,6 @@ export default function App() {
         <meshStandardMaterial color="#a66a35" />
       </mesh>
           </group>
-      </group>
-      
     </Canvas>
     </div>
 
