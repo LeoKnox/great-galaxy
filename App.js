@@ -45,7 +45,7 @@ export default function App() {
       </mesh>
         </mesh>
       ))}
-      <Stair position={[3.25, -.75, 1]} />
+      <Stair position={[3.25, -.75, .75]} />
       </group>
 
     </Canvas>
@@ -53,4 +53,3 @@ export default function App() {
 
   );
 }
-
