@@ -3,7 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 
 export default function App() {
   function Stair({
-    size = 2,
+    size = 1,
     position = [0, 0, 0],
     color = "blue",
   }) {
@@ -45,7 +45,7 @@ export default function App() {
       </mesh>
         </mesh>
       ))}
-      <Stair position={[3.5, 0, 1]} />
+      <Stair position={[3.25, -.75, 1]} />
       </group>
 
     </Canvas>
@@ -53,3 +53,4 @@ export default function App() {
 
   );
 }
+
