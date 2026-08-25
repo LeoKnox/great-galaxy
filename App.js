@@ -29,7 +29,7 @@ export default function App() {
       ))}
       
       </group>
-      <group>
+      <group rotation={[-70, 0, 0]} >
         <mesh position={[0, 0.25, 0]}>
         <boxGeometry args={[2, 0.5, 1]} />
         <meshStandardMaterial color="#8b5a2b" />
