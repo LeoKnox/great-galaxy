@@ -5,7 +5,7 @@ export default function App() {
   function Stair({
     size = 1,
     position = [0, 0, 0],
-    color = "blue",
+    color = "#8e9199",
   }) {
     return (
       <group position={position}>
