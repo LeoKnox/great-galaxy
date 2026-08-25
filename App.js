@@ -25,8 +25,8 @@ export default function App() {
         </mesh>
       ))}
       </group>
-      <mesh position={[2.5, 0, 0]} scale={[2, .5, 1]}>
-        <boxGeometry />
+      <mesh position={[2.5, 0, 1]}>
+        <boxGeometry args={[2, 1, 1]}/>
         <meshBasicMaterial color="gray" />
       </mesh>
     </Canvas>
