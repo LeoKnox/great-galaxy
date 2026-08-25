@@ -7,7 +7,7 @@ export default function App() {
     { position: [2, 2, 0], color: "#bcc0cc" },
     { position: [0, 0, 0], color: "#bcc0cc" },
     { position: [2, 0, 0], color: "#8e9199" },
-    { position: [4, -1, .5],rotation: [90, 0,0], color: "#bcc0cc" },
+    
   ];
   const checker = []
   return (
@@ -25,10 +25,10 @@ export default function App() {
         </mesh>
       ))}
       </group>
-      {/*<mesh rotation={[0.5, 0.5, 0]} position={[0, -0, 0]} scale={[2, .5, 2]}>
+      <mesh position={[2.5, 0, 0]} scale={[2, .5, 1]}>
         <boxGeometry />
         <meshBasicMaterial color="gray" />
-      </mesh>*/}
+      </mesh>
     </Canvas>
     </div>
 
