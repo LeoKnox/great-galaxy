@@ -2,6 +2,24 @@ import "./styles.css";
 import { Canvas, useFrame } from "@react-three/fiber";
 
 export default function App() {
+  function Stair({
+    size = 2,
+    position = [0, 0, 0],
+    color = "blue",
+  }) {
+    return (
+      <group position={position}>
+        <mesh position={[0, size / 4, 0]}>
+          <boxGeometry args={[size, size / 2, size]} />
+          <meshStandardMaterial color={color} />
+        </mesh>
+        <mesh position={[0, size * 0.75, -size / 4]}>
+          <boxGeometry args={[size, size * 1.5, size / 2]} />
+          <meshStandardMaterial color={color} />
+        </mesh>
+      </group>
+    );
+  }
   const squares = [
     { position: [0, 2, 0], color: "#8e9199" },
     { position: [2, 2, 0], color: "#bcc0cc" },
@@ -27,18 +45,9 @@ export default function App() {
       </mesh>
         </mesh>
       ))}
-      
+      <Stair />
       </group>
-      <group rotation={[-70, 0, 0]} >
-        <mesh position={[0, 0.25, 0]}>
-        <boxGeometry args={[2, 0.5, 1]} />
-        <meshStandardMaterial color="#8b5a2b" />
-      </mesh>
-      <mesh position={[0, 0.75, -0.5]}>
-        <boxGeometry args={[2, 1, 1]} />
-        <meshStandardMaterial color="#a66a35" />
-      </mesh>
-          </group>
+
     </Canvas>
     </div>
 
