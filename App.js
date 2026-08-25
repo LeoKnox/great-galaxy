@@ -23,11 +23,20 @@ export default function App() {
             
           />
           <mesh position={[3.5, 0, 1]}>
-        <boxGeometry args={[2, 1, 1]}/>
-        <meshBasicMaterial color="gray" />
+        
       </mesh>
         </mesh>
       ))}
+      <group>
+        <mesh position={[0, 0.25, 0]}>
+        <boxGeometry args={[2, 0.5, 1]} />
+        <meshStandardMaterial color="#8b5a2b" />
+      </mesh>
+      <mesh position={[0, 0.75, -0.5]}>
+        <boxGeometry args={[2, 1, 1]} />
+        <meshStandardMaterial color="#a66a35" />
+      </mesh>
+          </group>
       </group>
       
     </Canvas>
