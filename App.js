@@ -30,9 +30,9 @@ export default function App() {
   const checker = []
   return (
       <div style={{ height: "100vh", width: "100vw" }}>
-       <Canvas>
+       <Canvas camera={{ position: [0, 10, 0], rotation: [-Math.PI / 2, 0, 0], fov: 50 }}>
        <ambientLight intensity={1} />
-<group rotation={[-70, 0, 0]} position={[-1.5, 0, 0]} >
+<group position={[-1.5, 0, 0]} >
 {squares.map((square, index) => (
         <mesh key={index} position={square.position} rotation={square.rotation}>
           <planeGeometry args={[2, 2]} />
