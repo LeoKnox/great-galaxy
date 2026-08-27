@@ -2,6 +2,7 @@ import "./styles.css";
 import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import Stairs from "./components/Stairs";
+import Floor from "./components/Floor";
 
 export default function App() {
   const TILE_SIZE = 1;
@@ -25,7 +26,7 @@ export default function App() {
     );
   }
 
-  function Floor({
+  /*function Floor({
     width = 12,
     depth = 8,
   }) {
@@ -47,7 +48,7 @@ export default function App() {
     }
   
     return <group>{tiles}</group>;
-  }
+  }*/
 
   function Walls() {
     const wallHeight = 1;
