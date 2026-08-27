@@ -5,8 +5,8 @@ export default function Stairs({
   rotation = [0, 0, 0],
   color = "#9a613d",
 }) {
-  const stairWidth = 2;
-  const stepDepth = 0.5;
+  const stairWidth = 1;
+  const stepDepth = .5;
   const stepHeight = 0.25;
 
   return (
