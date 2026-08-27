@@ -1,55 +1,23 @@
-import React from "react";
-
-export default function Stairs({
-  position = [0, 0, 0],
-  rotation = [0, 0, 0],
-  color = "#9a613d",
-}) {
-  const stairWidth = 2;
-  const stepDepth = 0.5;
-  const stepHeight = 0.25;
-
-  return (
-    <group position={position} rotation={rotation}>
-      {/* Lower step */}
-      <mesh
-        position={[
-          0,
-          stepHeight / 2,
-          -stepDepth / 2,
-        ]}
-        castShadow
-        receiveShadow
-      >
-        <boxGeometry
-          args={[
-            stairWidth,
-            stepHeight,
-            stepDepth,
-          ]}
-        />
-        <meshStandardMaterial color={color} />
-      </mesh>
-
-      {/* Higher step */}
-      <mesh
-        position={[
-          0,
-          stepHeight + stepHeight / 2,
-          stepDepth / 2,
-        ]}
-        castShadow
-        receiveShadow
-      >
-        <boxGeometry
-          args={[
-            stairWidth,
-            stepHeight * 2,
-            stepDepth,
-          ]}
-        />
-        <meshStandardMaterial color={color} />
-      </mesh>
-    </group>
-  );
-}
+export default function Floor({
+    width = 12,
+    depth = 8,
+  }) {
+    const tiles = [];
+  
+    for (let z = 0; z < depth; z++) {
+      for (let x = 0; x < width; x++) {
+        const worldX = x - width / 2 + 0.5;
+        const worldZ = z - depth / 2 + 0.5;
+  
+        tiles.push(
+          <FloorTile
+            key={`${x}-${z}`}
+            position={[worldX, 0, worldZ]}
+            color={(x + z) % 2 === 0 ? "#777b82" : "#6d7178"}
+          />
+        );
+      }
+    }
+  
+    return <group>{tiles}</group>;
+  }
