@@ -1,55 +1,9 @@
 import "./styles.css";
 import { Canvas, useFrame } from "@react-three/fiber";
-import * as THREE from "three";
 import Stairs from "./components/Stairs";
 import Floor from "./components/Floor";
 
 export default function App() {
-  const TILE_SIZE = 1;
-
-  function FloorTile({
-    position = [0, 0, 0],
-    color = "#777b82",
-  }) {
-    return (
-      <mesh
-        rotation={[-Math.PI / 2, 0, 0]}
-        position={position}
-        receiveShadow
-      >
-        <planeGeometry args={[TILE_SIZE, TILE_SIZE]} />
-        <meshStandardMaterial
-          color={color}
-          side={THREE.DoubleSide}
-        />
-      </mesh>
-    );
-  }
-
-  /*function Floor({
-    width = 12,
-    depth = 8,
-  }) {
-    const tiles = [];
-  
-    for (let z = 0; z < depth; z++) {
-      for (let x = 0; x < width; x++) {
-        const worldX = x - width / 2 + 0.5;
-        const worldZ = z - depth / 2 + 0.5;
-  
-        tiles.push(
-          <FloorTile
-            key={`${x}-${z}`}
-            position={[worldX, 0, worldZ]}
-            color={(x + z) % 2 === 0 ? "#777b82" : "#6d7178"}
-          />
-        );
-      }
-    }
-  
-    return <group>{tiles}</group>;
-  }*/
-
   function Walls() {
     const wallHeight = 1;
     const wallThickness = 0.2;
