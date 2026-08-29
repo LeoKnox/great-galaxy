@@ -4,7 +4,7 @@ import Walls from "./Walls";
 
 export default function Room() {
     const stairsLoc = [{position:[-3.5, 0, .5], rotation:[0, 0, 0]},
-    {position:[3.5, 0, -1.5], rotation:[0, Math.PI / 2, 0]}]
+    {position:[3.5, 0, -1.5], rotation:[0, Math.PI / 2, 0],color:"lightGray"}]
     return (
       <>
         <Floor width={12} depth={8} />
@@ -14,7 +14,7 @@ export default function Room() {
         <Stairs
         position={[stairsLoc[v].position[0], stairsLoc[v].position[1], stairsLoc[v].position[2]]}
         rotation={[stairsLoc[v].rotation[0], stairsLoc[v].rotation[1], stairsLoc[v].rotation[2]]}
-      color= "darkgray"
+      color= {stairsLoc[v].color}
       />
     ))}
       </>
