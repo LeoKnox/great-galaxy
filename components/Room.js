@@ -11,7 +11,7 @@ export default function Room() {
   
         {/* Reusable stair instances */}
         <Stairs
-        position={[stairsLoc.position[0], 0, .5]}
+        position={[stairsLoc[0].position[0], 0, .5]}
         rotation={[0, 0, 0]}
       />
         <Stairs
