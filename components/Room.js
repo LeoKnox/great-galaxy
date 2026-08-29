@@ -9,10 +9,10 @@ export default function Room() {
         <Floor width={12} depth={8} />
         <Walls />
   
-        {stairsLoc.map((i) => (
+        {stairsLoc.map((i,v) => (
         <Stairs
-        position={[stairsLoc[i].position[0], stairsLoc[i].position[1], stairsLoc[0].position[2]]}
-        rotation={[stairsLoc[i].rotation[0], stairsLoc[i].rotation[1], stairsLoc[0].rotation[2]]}
+        position={[stairsLoc[v].position[0], stairsLoc[v].position[1], stairsLoc[v].position[2]]}
+        rotation={[stairsLoc[v].rotation[0], stairsLoc[v].rotation[1], stairsLoc[v].rotation[2]]}
       />
     ))}
         <Stairs
