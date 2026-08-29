@@ -1,8 +1,9 @@
-import Stairs from "./components/Stairs";
-import Floor from "./components/Floor";
-import Walls from "./components/Walls";
+import Stairs from "./Stairs";
+import Floor from "./Floor";
+import Walls from "./Walls";
 
 export default function Room() {
+    const stairsLoc = [{position:[-3.5, 0, .5], rotation:[0, 0, 0]}]
     return (
       <>
         <Floor width={12} depth={8} />
@@ -10,13 +11,13 @@ export default function Room() {
   
         {/* Reusable stair instances */}
         <Stairs
-        position={[-3.5, 0, .5]}
+        position={[stairsLoc.position[0], 0, .5]}
         rotation={[0, 0, 0]}
       />
         <Stairs
         position={[3.5, 0, -1.5]}
         rotation={[0, Math.PI / 2, 0]}
-        color="#77503b"
+        color="darkgray"
       />
       </>
     );
