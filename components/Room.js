@@ -9,11 +9,12 @@ export default function Room() {
         <Floor width={12} depth={8} />
         <Walls />
   
-        {/* Reusable stair instances */}
+        {stairsLoc.map((i) => (
         <Stairs
-        position={[stairsLoc[0].position[0], stairsLoc[0].position[1], stairsLoc[0].position[2]]}
-        rotation={[stairsLoc[0].rotation[0], stairsLoc[0].rotation[1], stairsLoc[0].rotation[2]]}
+        position={[stairsLoc[i].position[0], stairsLoc[i].position[1], stairsLoc[0].position[2]]}
+        rotation={[stairsLoc[i].rotation[0], stairsLoc[i].rotation[1], stairsLoc[0].rotation[2]]}
       />
+    ))}
         <Stairs
         position={[3.5, 0, -1.5]}
         rotation={[0, Math.PI / 2, 0]}
