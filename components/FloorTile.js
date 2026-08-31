@@ -1,4 +1,3 @@
-import * as THREE from "three";
 
 export default function FloorTile({
     position = [0, 0, 0],
@@ -14,7 +13,7 @@ export default function FloorTile({
         <planeGeometry args={[TILE_SIZE, TILE_SIZE]} />
         <meshStandardMaterial
           color={color}
-          side={THREE.DoubleSide}
+          
         />
       </mesh>
     );
