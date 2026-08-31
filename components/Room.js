@@ -19,8 +19,8 @@ export default function Room() {
   
         {stairsLoc.map((i,v) => (
         <Stairs
-        position={[stairsLoc[v].position[0], stairsLoc[v].position[1], stairsLoc[v].position[2]]}
-        rotation={[stairsLoc[v].rotation[0], stairsLoc[v].rotation[1], stairsLoc[v].rotation[2]]}
+        position={[...stairsLoc[v].position]}
+        rotation={[...stairsLoc[v].rotation]}
       color= {stairsLoc[v].color}
       />
     ))}
