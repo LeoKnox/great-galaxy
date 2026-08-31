@@ -1,6 +1,7 @@
 import Stairs from "./Stairs";
 import Floor from "./Floor";
 import Walls from "./Walls";
+import Character from "./Character";
 
 export default function Room() {
     const stairsLoc = [{position:[-3.5, 0, .5], rotation:[0, 0, 0]},
@@ -17,6 +18,7 @@ export default function Room() {
       color= {stairsLoc[v].color}
       />
     ))}
+    <Character />
       </>
     );
   }
