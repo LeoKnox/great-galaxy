@@ -18,7 +18,7 @@ export default function Room() {
       color= {stairsLoc[v].color}
       />
     ))}
-    <Character />
+    <Character position={[-.5, 0, -1.5]} rotation={[0, 0, 0]}/>
       </>
     );
   }
