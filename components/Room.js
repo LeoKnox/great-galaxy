@@ -21,7 +21,8 @@ export default function Room() {
     function handleKeyDown(event) {
       const key = event.key.toLowerCase();
 
-      setCharacterPosition((position: [x, y, z]) => {
+      setCharacterPosition((previous) => {
+        const [x, y, z] = previous.position;
         switch (key) {
           case "w":
             return { position: [x, y, z - 1] };
