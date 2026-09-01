@@ -2,7 +2,7 @@ import Stairs from "./Stairs";
 import Floor from "./Floor";
 import Walls from "./Walls";
 import Character from "./Character";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
 export default function Room() {
     const [characterPosition, setCharacterPosition] = useState({position:[
@@ -12,6 +12,38 @@ export default function Room() {
       ]});
     const stairsLoc = [{position:[-3.5, 0, .5], rotation:[0, 0, 0]},
     {position:[3.5, 0, -1.5], rotation:[0, Math.PI / 2, 0],color:"lightGray"}]
+    
+    useEffect(() => {
+        function handleKeyDown(event) {
+          const key = event.key.toLowerCase();
+    
+          setCharacterPosition(([x, y, z]) => {
+            switch (key) {
+              case "w":
+                return [x, y, z - 1];
+    
+              case "s":
+                return [x, y, z + 1];
+    
+              case "a":
+                return [x - 1, y, z];
+    
+              case "d":
+                return [x + 1, y, z];
+    
+              default:
+                return [x, y, z];
+            }
+          });
+        }
+    
+        window.addEventListener("keydown", handleKeyDown);
+    
+        return () => {
+          window.removeEventListener("keydown", handleKeyDown);
+        };
+      }, []);
+
     return (
       <>
         <Floor width={12} depth={8} />
