@@ -25,7 +25,10 @@ export default function Room() {
         const [x, y, z] = characterPosition.position;
         switch (key) {
           case "w":
-            return { position: [x, y, z - 1] };
+            setCharacterPosition({
+              ...characterPosition,
+              position: [x, y, z - 1],
+            });
 
           case "s":
             return { position: [x, y, z + 1] };
