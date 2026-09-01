@@ -22,7 +22,7 @@ export default function Room() {
       const key = event.key.toLowerCase();
 
       setCharacterPosition((previous) => {
-        const [x, y, z] = previous.position;
+        const [x, y, z] = characterPosition.position;
         switch (key) {
           case "w":
             return { position: [x, y, z - 1] };
