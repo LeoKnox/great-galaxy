@@ -28,13 +28,13 @@ export default function Room() {
             return { position: [x, y, z - 1] };
 
           case "s":
-            return [x, y, z + 1];
+            return { position: [x, y, z + 1] };
 
           case "a":
-            return [x - 1, y, z];
+            return { position: [x - 1, y, z] };
 
           case "d":
-            return [x + 1, y, z];
+            return { position: [x + 1, y, z] };
 
           default:
             return [x, y, z];
