@@ -21,26 +21,34 @@ export default function Room() {
     function handleKeyDown(event) {
       const key = event.key.toLowerCase();
 
-      setCharacterPosition((previous) => {
-        const [x, y, z] = characterPosition.position;
+      setCharacterPosition(() => {
         switch (key) {
           case "w":
             setCharacterPosition({
-              ...previous,
+              ...characterPosition,
               position: [x, y, z - 1],
             });
 
           case "s":
-            return { position: [x, y, z + 1] };
+            setCharacterPosition({
+              ...characterPosition,
+              position: [x, y, z + 1],
+            });
 
           case "a":
-            return { position: [x - 1, y, z] };
+            setCharacterPosition({
+              ...characterPosition,
+              position: [x - 1, y, z],
+            });
 
           case "d":
-            return { position: [x + 1, y, z] };
+            setCharacterPosition({
+              ...characterPosition,
+              position: [x - 1, y, z],
+            });
 
           default:
-            return [x, y, z];
+            characterPosition;
         }
       });
     }
