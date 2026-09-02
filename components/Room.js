@@ -19,7 +19,7 @@ export default function Room() {
 
   useEffect(() => {
     function handleKeyDown(event) {
-      const [x, y, z] = characterPosition.position;
+      const [x, y, z] = [...characterPosition.position];
       const key = event.key.toLowerCase();
 
       setCharacterPosition(() => {
