@@ -35,7 +35,6 @@ export default function Room() {
             ...characterPosition,
             position: [x, y, z + 1],
           });
-          break;
 
         case "a":
           setCharacterPosition({
@@ -61,7 +60,7 @@ export default function Room() {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [characterPosition]);
 
   return (
     <>
