@@ -30,25 +30,23 @@ export default function Room() {
             };
 
           case "s":
-            setCharacterPosition({
-              ...characterPosition,
+            return {
               position: [x, y, z + 1],
-            });
+            };
 
           case "a":
-            setCharacterPosition({
-              ...characterPosition,
+            return {
               position: [x - 1, y, z],
-            });
+            };
 
           case "d":
-            setCharacterPosition({
+            return {
               ...characterPosition,
-              position: [x - 1, y, z],
-            });
+              position: [x + 1, y, z],
+            };
 
           default:
-            characterPosition;
+            [x, y, z];
         }
       });
     }
