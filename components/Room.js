@@ -30,9 +30,11 @@ export default function Room() {
             };
 
           case "s":
-            return {
+            setCharacterPosition({
+              ...characterPosition,
               position: [x, y, z + 1],
-            };
+            });
+            break;
 
           case "a":
             return {
