@@ -35,6 +35,7 @@ export default function Room() {
             ...characterPosition,
             position: [x, y, z + 1],
           });
+          break;
 
         case "a":
           setCharacterPosition({
