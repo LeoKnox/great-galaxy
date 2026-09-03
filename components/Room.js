@@ -26,7 +26,6 @@ export default function Room() {
         switch (key) {
           case "w":
             return {
-              ...characterPosition,
               position: [x, y, z - 1],
             };
 
