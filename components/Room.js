@@ -28,74 +28,32 @@ export default function Room() {
             ...characterPosition,
             position: [x, y, z - 1],
           });
+          break;
 
         case "s":
-          return {
+          setCharacterPosition({
             ...characterPosition,
             position: [x, y, z + 1],
-          };
+          });
           break;
 
         case "a":
-          return {
+          setCharacterPosition({
             ...characterPosition,
             position: [x - 1, y, z],
-          };
+          });
+          break;
 
         case "d":
-          return {
+          setCharacterPosition({
             ...characterPosition,
             position: [x + 1, y, z],
-          };
+          });
+          break;
 
         default:
           [x, y, z];
       }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, []);
-
-  return (
-    <>
-      <Floor width={12} depth={8} />
-      <Walls />
-
-      {stairsLoc.map((i, v) => (
-        <Stairs
-          position={[...stairsLoc[v].position]}
-          rotation={[...stairsLoc[v].rotation]}
-          color={stairsLoc[v].color}
-        />
-      ))}
-      <Character
-        position={[...characterPosition.position]}
-        rotation={[0, 0, 0]}
-      />
-    </>
-  );
-}
-            break;
-
-          case "a":
-            return {
-              position: [x - 1, y, z],
-            };
-
-          case "d":
-            return {
-              ...characterPosition,
-              position: [x + 1, y, z],
-            };
-
-          default:
-            [x, y, z];
-        }
-      });
     }
 
     window.addEventListener("keydown", handleKeyDown);
