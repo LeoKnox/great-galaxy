@@ -22,18 +22,63 @@ export default function Room() {
       const [x, y, z] = [...characterPosition.position];
       const key = event.key.toLowerCase();
 
-      setCharacterPosition(() => {
-        switch (key) {
-          case "w":
-            return {
-              position: [x, y, z - 1],
-            };
+      switch (key) {
+        case "w":
+          setCharacterPosition({
+            ...characterPosition,
+            position: [x, y, z - 1],
+          });
 
-          case "s":
-            return {
-              ...characterPosition,
-              position: [x, y, z + 1],
-            };
+        case "s":
+          return {
+            ...characterPosition,
+            position: [x, y, z + 1],
+          };
+          break;
+
+        case "a":
+          return {
+            ...characterPosition,
+            position: [x - 1, y, z],
+          };
+
+        case "d":
+          return {
+            ...characterPosition,
+            position: [x + 1, y, z],
+          };
+
+        default:
+          [x, y, z];
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  return (
+    <>
+      <Floor width={12} depth={8} />
+      <Walls />
+
+      {stairsLoc.map((i, v) => (
+        <Stairs
+          position={[...stairsLoc[v].position]}
+          rotation={[...stairsLoc[v].rotation]}
+          color={stairsLoc[v].color}
+        />
+      ))}
+      <Character
+        position={[...characterPosition.position]}
+        rotation={[0, 0, 0]}
+      />
+    </>
+  );
+}
             break;
 
           case "a":
