@@ -1,84 +1,40 @@
-import Stairs from "./Stairs";
-import Floor from "./Floor";
-import Walls from "./Walls";
-import Character from "./Character";
-import { useState, useEffect } from "react";
+import "./styles.css";
+import { Canvas, useFrame } from "@react-three/fiber";
 
-export default function Room() {
-  const [characterPosition, setCharacterPosition] = useState({
-    position: [-0.5, 0, -1.5],
-  });
-  const stairsLoc = [
-    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0] },
-    {
-      position: [3.5, 0, -1.5],
-      rotation: [0, Math.PI / 2, 0],
-      color: "lightGray",
-    },
-  ];
+import Room from "./components/Room";
 
-  useEffect(() => {
-    function handleKeyDown(event) {
-      const [x, y, z] = [...characterPosition.position];
-      const key = event.key.toLowerCase();
-
-      switch (key) {
-        case "w":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x, y, z - 1],
-          });
-          break;
-
-        case "s":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x, y, z + 1],
-          });
-          break;
-
-        case "a":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x - 1, y, z],
-          });
-          break;
-
-        case "d":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x + 1, y, z],
-          });
-          break;
-
-        default:
-          [x, y, z];
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [characterPosition]);
-
+export default function App() {
+  
+  
+  
   return (
-    <>
-      <Floor width={12} depth={8} />
-      <Walls />
+      <div style={{ height: "100vh", width: "90vw" }}>
+<Canvas
+      orthographic
+      shadows
+      camera={{
+        position: [0, 12, 0],
+        rotation: [-Math.PI / 2, 0, 0],
+        zoom: 65,
+        near: 0.1,
+        far: 100,
+      }}
+    >
+      <color attach="background" args={["#202228"]} />
 
-      {stairsLoc.map((i, v) => (
-        <Stairs
-          position={[...stairsLoc[v].position]}
-          rotation={[...stairsLoc[v].rotation]}
-          color={stairsLoc[v].color}
-        />
-      ))}
-      <Character
-        position={[...characterPosition.position]}
-        rotation={[0, 0, 0]}
+      <ambientLight intensity={1.5} />
+
+      <directionalLight
+        position={[5, 10, 5]}
+        intensity={2}
+        castShadow
+        shadow-mapSize-width={2048}
+        shadow-mapSize-height={2048}
       />
-    </>
+
+      <Room />
+    </Canvas>
+    </div>
+
   );
 }
