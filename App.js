@@ -1,4 +1,5 @@
 import "./styles.css";
+import PlayerInfo from "./components/PlayerInfo";
 import { Canvas, useFrame } from "@react-three/fiber";
 
 import Room from "./components/Room";
@@ -31,7 +32,7 @@ export default function App() {
 
         <Room />
       </Canvas>
-      <h3>Character Name</h3>
+      <PlayerInfo />
     </div>
   );
 }
