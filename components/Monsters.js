@@ -5,7 +5,7 @@ export default function Monsters({
   return (
     <mesh position={position[0]}>
       <sphereGeometry args={[0.5, 16, 16]} />
-      <meshStandardMaterial color="indigo" roughness={0.2} />
+      <meshStandardMaterial color="indigo" />
     </mesh>
   );
 }
