@@ -39,7 +39,7 @@ export default function App() {
 
         <Room />
       </Canvas>
-      <PlayerInfo />
+      <PlayerInfo character={character} />
     </div>
   );
 }
