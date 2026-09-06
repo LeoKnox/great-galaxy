@@ -1,10 +1,17 @@
 import "./styles.css";
 import PlayerInfo from "./components/PlayerInfo";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useState } from "react";
 
 import Room from "./components/Room";
 
 export default function App() {
+  const [character, setCharacter] = useState({
+    name: "Midori",
+    class: "fighter",
+    level: 3,
+    hp: 18,
+  });
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <Canvas
