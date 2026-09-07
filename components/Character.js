@@ -1,95 +1,11 @@
-import Stairs from "./Stairs";
-import PlayerInfo from "./PlayerInfo";
-
-import Floor from "./Floor";
-import Walls from "./Walls";
-import Character from "./Character";
-import Monsters from "./Monsters";
-import { useState, useEffect } from "react";
-
-export default function Room() {
-  const character = {
-    name: "Midori",
-    class: "fighter",
-    level: 3,
-    hp: 18,
-  };
-  const [characterPosition, setCharacterPosition] = useState({
-    position: [-0.5, 0, -1.5],
-  });
-  const stairsLoc = [
-    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0] },
-    {
-      position: [3.5, 0, -1.5],
-      rotation: [0, Math.PI / 2, 0],
-      color: "lightGray",
-    },
-  ];
-
-  useEffect(() => {
-    function handleKeyDown(event) {
-      const [x, y, z] = [...characterPosition.position];
-      const key = event.key.toLowerCase();
-
-      switch (key) {
-        case "w":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x, y, z - 1],
-          });
-          break;
-
-        case "s":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x, y, z + 1],
-          });
-          break;
-
-        case "a":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x - 1, y, z],
-          });
-          break;
-
-        case "d":
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x + 1, y, z],
-          });
-          break;
-
-        default:
-          [x, y, z];
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [characterPosition]);
-
+export default function Character({
+  position = [0, 0, 0],
+  rotation = [0, 0, 0],
+}) {
   return (
-    <>
-      <Floor width={12} depth={8} />
-      <Walls />
-
-      {stairsLoc.map((i, v) => (
-        <Stairs
-          position={[...stairsLoc[v].position]}
-          rotation={[...stairsLoc[v].rotation]}
-          color={stairsLoc[v].color}
-        />
-      ))}
-      <PlayerInfo character />
-      <Character
-        position={[...characterPosition.position]}
-        rotation={[0, 0, 0]}
-      />
-      <Monsters />
-    </>
+    <mesh position={position} rotation={rotation}>
+      <coneGeometry args={[1, 2, 16]} />
+      <meshStandardMaterial color="green" />
+    </mesh>
   );
 }
