@@ -1,7 +1,9 @@
 import Stairs from "./Stairs";
+import PlayerInfo from "./PlayerInfo";
+import Character from "./Character";
 import Floor from "./Floor";
 import Walls from "./Walls";
-import Character from "./Character";
+
 import Monsters from "./Monsters";
 import { useState, useEffect } from "react";
 
@@ -76,6 +78,7 @@ export default function Room() {
           color={stairsLoc[v].color}
         />
       ))}
+
       <Character
         position={[...characterPosition.position]}
         rotation={[0, 0, 0]}
