@@ -6,13 +6,9 @@ export default function Monsters({
   rotation = [0, 0, 0],
 }) {
   return position.map((cur) => (
-    <>
-      <p>1</p>
-
-      <mesh position={cur}>
-        <sphereGeometry args={[0.5, 16, 16]} />
-        <meshStandardMaterial color="indigo" />
-      </mesh>
-    </>
+    <mesh position={cur}>
+      <sphereGeometry args={[0.5, 16, 16]} />
+      <meshStandardMaterial color="indigo" />
+    </mesh>
   ));
 }
