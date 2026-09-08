@@ -21,7 +21,8 @@ export default function Room() {
   ];
 
   const collision = (x, y, z) => {
-    if (x == 5) {
+    console.log(x);
+    if (x == 3.5) {
       return false;
     }
     return true;
