@@ -23,7 +23,7 @@ export default function Room() {
   const collision = (x, y, z) => {
     console.log(x);
     if (x == 3.5) {
-      return false;
+      return x, y + 2, z;
     }
     return true;
   };
