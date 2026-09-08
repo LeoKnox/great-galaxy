@@ -56,12 +56,11 @@ export default function Room() {
           break;
 
         case "d":
-          if (collision(x + 1, y, z)) {
-            setCharacterPosition({
-              ...characterPosition,
-              position: [x + 1, y, z],
-            });
-          }
+          setCharacterPosition({
+            ...characterPosition,
+            collision(x + 1, y, z),
+          });
+
           break;
 
         default:
