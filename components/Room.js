@@ -20,6 +20,13 @@ export default function Room() {
     },
   ];
 
+  const collision = (x, y, z) => {
+    if (x == 5) {
+      return false;
+    }
+    return true;
+  };
+
   useEffect(() => {
     function handleKeyDown(event) {
       const [x, y, z] = [...characterPosition.position];
@@ -48,11 +55,12 @@ export default function Room() {
           break;
 
         case "d":
-          x = x + 1;
-          setCharacterPosition({
-            ...characterPosition,
-            position: [x, y, z],
-          });
+          if (collision(x + 1, y, z)) {
+            setCharacterPosition({
+              ...characterPosition,
+              position: [x + 1, y, z],
+            });
+          }
           break;
 
         default:
