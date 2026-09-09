@@ -20,12 +20,12 @@ export default function Room() {
     },
   ];
 
-  const collision = (x, y, z) => {
+  const collision = (x, y, z, offset) => {
     console.log(x);
     if (x == 3.5) {
       return x, y + 2, z;
     }
-    return true;
+    return x + offset, y, z;
   };
 
   useEffect(() => {
@@ -56,7 +56,7 @@ export default function Room() {
           break;
 
         case "d":
-          let temp = collision(x + 1, y, z);
+          let temp = collision(x, y, z, 1);
           setCharacterPosition({
             ...characterPosition,
             temp,
