@@ -56,9 +56,10 @@ export default function Room() {
           break;
 
         case "d":
+          let temp = collision(x + 1, y, z);
           setCharacterPosition({
             ...characterPosition,
-            collision(x + 1, y, z),
+            temp,
           });
 
           break;
