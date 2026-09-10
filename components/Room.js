@@ -24,7 +24,7 @@ export default function Room() {
     if (x == 3.5) {
       return x, y + 2, z;
     }
-    return x + offset, y, z;
+    return { x: x + offset, y: y, z: z };
   };
 
   useEffect(() => {
