@@ -21,10 +21,11 @@ export default function Room() {
   ];
 
   function collision() {
-    setCharacterPosition({
+    /*setCharacterPosition({
       ...characterPosition,
       position: [-2, 0, -2],
-    });
+    });*/
+    return [-2, 0, -2];
   }
 
   useEffect(() => {
@@ -55,7 +56,11 @@ export default function Room() {
           break;
 
         case "d":
-          collision(x + 1, y, z);
+          temp = collision();
+          setCharacterPosition({
+            ...characterPosition,
+            position: collision(),
+          });
           break;
 
         default:
