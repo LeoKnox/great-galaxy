@@ -21,7 +21,6 @@ export default function Room() {
   ];
 
   const collision = (x, y, z, offset) => {
-    console.log(x);
     if (x == 3.5) {
       return x, y + 2, z;
     }
@@ -57,6 +56,7 @@ export default function Room() {
 
         case "d":
           let temp = collision(x, y, z, 1);
+          console.log(temp);
           setCharacterPosition({
             ...characterPosition,
             temp,
