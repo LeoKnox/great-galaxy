@@ -55,7 +55,7 @@ export default function Room() {
           break;
 
         case "d":
-          position(x + 1, y, z);
+          collision(x + 1, y, z);
           break;
 
         default:
