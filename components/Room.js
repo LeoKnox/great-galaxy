@@ -56,7 +56,7 @@ export default function Room() {
 
         case "d":
           let temp = collision(x, y, z, 1);
-          console.log(temp);
+
           setCharacterPosition({
             ...characterPosition,
             position: temp,
@@ -67,6 +67,7 @@ export default function Room() {
         default:
           [x, y, z];
       }
+      console.log(characterPosition);
     }
 
     window.addEventListener("keydown", handleKeyDown);
