@@ -58,7 +58,6 @@ export default function Room() {
           let temp = collision(x, y, z, 1);
           console.log(temp);
           setCharacterPosition({
-            ...characterPosition,
             temp,
           });
 
