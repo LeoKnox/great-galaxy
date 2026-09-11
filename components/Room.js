@@ -20,8 +20,8 @@ export default function Room() {
     },
   ];
 
-  function collision(x = -2.5, y = 0, z = -2.5, offset) {
-    return [x + offset, y, z];
+  function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
+    return [x + offsetx, y + offsety, z + offsetz];
   }
 
   useEffect(() => {
@@ -54,7 +54,7 @@ export default function Room() {
         case "d":
           setCharacterPosition({
             ...characterPosition,
-            position: collision(x, y, z, 1),
+            position: collision(x, y, z, 1, 0, 0),
           });
           break;
 
