@@ -22,6 +22,13 @@ export default function Room() {
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     let temp = [x + offsetx, offsety, z + offsetz];
+    if (
+      stairsLoc.some((stair) =>
+        stair.position.every((temp, index) => temp === characterPosition[index])
+      )
+    ) {
+      return [x + offsetx, 2, z + offsetz];
+    }
     return temp;
   }
 
