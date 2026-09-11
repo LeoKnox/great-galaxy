@@ -33,21 +33,21 @@ export default function Room() {
         case "w":
           setCharacterPosition({
             ...characterPosition,
-            position: [x, y, z - 1],
+            position: collision(x, y, z, 0, 0, -1),
           });
           break;
 
         case "s":
           setCharacterPosition({
             ...characterPosition,
-            position: [x, y, z + 1],
+            position: collision(x, y, z, 0, 0, 1),
           });
           break;
 
         case "a":
           setCharacterPosition({
             ...characterPosition,
-            position: [x - 1, y, z],
+            position: collision(x, y, z, -1, 0, 0),
           });
           break;
 
