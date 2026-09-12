@@ -27,6 +27,7 @@ export default function Room() {
         stair.position.every((temp, index) => temp === characterPosition[index])
       )
     ) {
+      console.log("Stairs");
       return [x + offsetx, 2, z + offsetz];
     }
     return temp;
@@ -69,7 +70,7 @@ export default function Room() {
         default:
           [x, y, z];
       }
-      console.log(characterPosition);
+      
     }
 
     window.addEventListener("keydown", handleKeyDown);
