@@ -22,6 +22,13 @@ export default function Room() {
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     let temp = [x + offsetx, offsety, z + offsetz];
+
+    stairsLoc.some((stair) =>
+      stair.position.every(
+        (temp, index) => temp === characterPosition[index].position
+      )
+    );
+
     if (
       stairsLoc.some((stair) =>
         stair.position.every((temp, index) => temp === characterPosition[index])
@@ -70,7 +77,6 @@ export default function Room() {
         default:
           [x, y, z];
       }
-      
     }
 
     window.addEventListener("keydown", handleKeyDown);
