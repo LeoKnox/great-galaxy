@@ -24,14 +24,16 @@ export default function Room() {
     let temp = [x + offsetx, offsety, z + offsetz];
 
     stairsLoc.some((stair) =>
-      stair.position.every(
-        (temp, index) => temp === characterPosition[index].position
+      stair.position.every((temp, index) =>
+        console.log(characterPosition[1].position)
       )
     );
 
     if (
       stairsLoc.some((stair) =>
-        stair.position.every((temp, index) => temp === characterPosition[index])
+        stair.position.every(
+          (temp, index) => temp === characterPosition.position[index]
+        )
       )
     ) {
       console.log("Stairs");
