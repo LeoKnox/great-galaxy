@@ -22,7 +22,7 @@ export default function Room() {
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     let temp = [x + offsetx, offsety, z + offsetz];
-
+    console.log(stairsLoc[0].position);
     if (stairsLoc.every((temp, index) => temp === temp[index].position)) {
       console.log("Stairs");
       return [x + offsetx, 2, z + offsetz];
