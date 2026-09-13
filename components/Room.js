@@ -29,7 +29,7 @@ export default function Room() {
       console.log({ value } + ":" + index + ":" + stairsLoc[index].position);
       return [x + offsetx, 2, z + offsetz];
     }*/
-    let c = stairsLoc.some((value, index) => temp == value);
+    let c = stairsLoc.some((value, index) => temp == stairsLoc[index].position);
 
     console.log(c);
     return temp;
