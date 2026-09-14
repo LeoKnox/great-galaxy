@@ -22,18 +22,9 @@ export default function Room() {
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     let temp = [x + offsetx, offsety, z + offsetz];
-    console.log(stairsLoc[0].position);
-    console.log(temp);
-    /*if (stairsLoc.every((value, index) => temp !== stairsLoc[index].position)) {
-      console.log("Stairs");
-      console.log({ value } + ":" + index + ":" + stairsLoc[index].position);
-      return [x + offsetx, 2, z + offsetz];
-    }*/
     let c = stairsLoc.some((value, index) =>
-      value.every((coord, loc) => coord == value[loc].position)
+      value.every((coord, loc) => coord.position == characterPosition.position)
     );
-
-    console.log(c);
     return temp;
   }
 
