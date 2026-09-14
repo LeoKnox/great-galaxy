@@ -30,7 +30,7 @@ export default function Room() {
       return [x + offsetx, 2, z + offsetz];
     }*/
     let c = stairsLoc.some((value, index) =>
-      value.every((coord, loc) => coord == value[loc])
+      value.every((coord, loc) => coord == value[loc].position)
     );
 
     console.log(c);
