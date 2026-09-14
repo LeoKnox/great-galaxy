@@ -27,6 +27,7 @@ export default function Room() {
         (coord, loc) => coord == characterPosition.position[loc]
       )
     );
+    console.log(c);
     return temp;
   }
 
