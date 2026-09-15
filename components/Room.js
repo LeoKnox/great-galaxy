@@ -21,7 +21,7 @@ export default function Room() {
   ];
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
-    let temp = [x + offsetx, offsety, z + offsetz];
+    let temp = [x, offsety, z + offsetz];
     let c = stairsLoc.some((value, index) =>
       value.position.every(
         (coord, loc) => coord == characterPosition.position[loc]
@@ -31,7 +31,7 @@ export default function Room() {
       return [x + offsetx, offsety + 2, z + offsetz];
     }
     console.log(c);
-    return temp;
+    return [x + offsetx, offsety, z + offsetz];
   }
 
   useEffect(() => {
