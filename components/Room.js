@@ -21,7 +21,7 @@ export default function Room() {
   ];
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
-    let temp = [x, offsety, z + offsetz];
+    let temp = [x, offsety, y, z + offsetz];
     let c = stairsLoc.some((value, index) =>
       value.position.every(
         (coord, loc) => coord == characterPosition.position[loc]
