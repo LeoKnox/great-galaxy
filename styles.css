@@ -16,7 +16,7 @@
   transform: translate(-50%, -50%);
   z-index: 1000;
   padding: 24px;
-  background: white;
+  background-color: rgba(100, 0, 0, 0.5);
   border: 2px solid #333;
   border-radius: 8px;
   box-shadow: 0 4px 20px rgb(0 0 0 / 30%);
