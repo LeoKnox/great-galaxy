@@ -39,6 +39,10 @@ export default function App() {
 
         <Room />
       </Canvas>
+      <div className="collision-menu">
+        <p>You collided with the stairs.</p>
+        <button onClick={() => setShowMenu(false)}>Close</button>
+      </div>
       <PlayerInfo character={character} />
     </div>
   );
