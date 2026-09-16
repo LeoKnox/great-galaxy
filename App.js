@@ -12,6 +12,9 @@ export default function App() {
     level: 3,
     hp: 18,
   });
+  const [characterMenu, setCharacterMenu] = useState([
+    <button onClick={() => setShowMenu(false)}>Close</button>,
+  ]);
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <Canvas
@@ -41,7 +44,7 @@ export default function App() {
       </Canvas>
       <div className="collision-menu">
         <p>You collided with the stairs.</p>
-        <button onClick={() => setShowMenu(false)}>Close</button>
+        {characterMenu}
       </div>
       <PlayerInfo character={character} />
     </div>
