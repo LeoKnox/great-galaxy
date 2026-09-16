@@ -14,6 +14,7 @@ export default function App() {
   });
   const [characterMenu, setCharacterMenu] = useState([
     <button onClick={() => setShowMenu(false)}>Close</button>,
+    <button>Attack</button>,
   ]);
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
@@ -44,7 +45,7 @@ export default function App() {
       </Canvas>
       <div className="collision-menu">
         <p>You collided with the stairs.</p>
-        {characterMenu}
+        {characterMenu.map((action) => action)}
       </div>
       <PlayerInfo character={character} />
     </div>
