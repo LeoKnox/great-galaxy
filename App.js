@@ -44,9 +44,11 @@ export default function App() {
 
         <Room />
       </Canvas>
-      {showMenu ?? (<div className="collision-menu">
+      {showMenu && (
+  
+      <div className="collision-menu">
         <p>You collided with the stairs.</p>
-        {characterMenu.map((action) => action)}
+        {characterMenu.map((action, index) => <label id={index}>action</label>)}
       </div>
       <PlayerInfo character={character} />
     </div>)}
