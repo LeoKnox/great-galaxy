@@ -29,7 +29,7 @@ export default function Room({ setShowMenu }) {
       setShowMenu(true);
       return [x + offsetx, offsety + 1, z + offsetz];
     }
-    console.log(c);
+    setShowMenu(false);
     return [x + offsetx, offsety, z + offsetz];
   }
 
