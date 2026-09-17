@@ -12,7 +12,7 @@ export default function App() {
     level: 3,
     hp: 18,
   });
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
   const [characterMenu, setCharacterMenu] = useState([
     <button onClick={() => setShowMenu(false)}>Close</button>,
     <button>Attack</button>,
@@ -45,12 +45,14 @@ export default function App() {
         <Room />
       </Canvas>
       {showMenu && (
-  
-      <div className="collision-menu">
-        <p>You collided with the stairs.</p>
-        {characterMenu.map((action, index) => <label id={index}>action</label>)}
-      </div>
-      <PlayerInfo character={character} />
-    </div>)}
-  )
+        <div className="collision-menu">
+          <p>You collided with the stairs.</p>
+          {characterMenu.map((action, index) => (
+            <label id={index}>action</label>
+          ))}
+        </div>
+      )}
+      <PlayerInfo character=character />
+    </div>
+  );
 }
