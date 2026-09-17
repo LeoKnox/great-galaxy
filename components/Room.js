@@ -7,7 +7,7 @@ import Walls from "./Walls";
 import Monsters from "./Monsters";
 import { useState, useEffect } from "react";
 
-export default function Room() {
+export default function Room({ setShowMenu }) {
   const [characterPosition, setCharacterPosition] = useState({
     position: [-0.5, 0, -1.5],
   });
@@ -26,7 +26,8 @@ export default function Room() {
       value.position.every((coord, loc) => coord == temp[loc])
     );
     if (c) {
-      return [x + offsetx, offsety + 2, z + offsetz];
+      setShowMenu(true);
+      return [x + offsetx, offsety + 1, z + offsetz];
     }
     console.log(c);
     return [x + offsetx, offsety, z + offsetz];
