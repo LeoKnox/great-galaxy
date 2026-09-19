@@ -42,9 +42,8 @@ export default function App() {
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
         />
-        <CharacterMenuProvider>
-          <Room setShowMenu={setShowMenu} />
-        </CharacterMenuProvider>
+   
+          <Room showMenu={showMenu} setShowMenu={setShowMenu} />
       </Canvas>
       {showMenu && (
         <div className="collision-menu">
@@ -52,7 +51,7 @@ export default function App() {
           {characterMenu.map((action, index) => action)}
         </div>
       )}
-      <PlayerInfo character={character} />
+      <playerInfo character={character} />
     </div>
   );
 }
