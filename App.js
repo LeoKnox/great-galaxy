@@ -43,7 +43,7 @@ export default function App() {
           shadow-mapSize-height={2048}
         />
    
-          <Room showMenu={showMenu} setShowMenu={setShowMenu} />
+          <Room characterMenu={characterMenu} setCharacterMenu={setCharacterMenu} setShowMenu={setShowMenu} />
       </Canvas>
       {showMenu && (
         <div className="collision-menu">
