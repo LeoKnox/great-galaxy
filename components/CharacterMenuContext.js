@@ -12,6 +12,6 @@ export function CharacterMenuProvider({ children }) {
   );
 }
 
-export function CharacterMenuContext() {
+export function useCharacterMenuContext() {
   return useContext(CharacterMenuContext);
 }
