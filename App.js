@@ -4,7 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useState } from "react";
 
 import Room from "./components/Room";
-import { CharacterMenuContext } from "./components/CharacterMenuContext";
+import { CharacterMenuProvider } from "./components/CharacterMenuContext";
 
 export default function App() {
   const [character, setCharacter] = useState({
