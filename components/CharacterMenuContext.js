@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 const CharacterMenuContext = createContext(null);
 
-export function CharacterMenuProvider({ children }) {
+export function CharacterMenuProvider({ name }) {
   const [playerMenu, setPlayerMenu] = useState([]);
 
   return (
