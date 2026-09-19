@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { useState } from "react";
 
 import Room from "./components/Room";
+import { CharacterMenuContext } from "./components/CharacterMenuContext";
 
 export default function App() {
   const [character, setCharacter] = useState({
@@ -12,7 +13,7 @@ export default function App() {
     level: 3,
     hp: 18,
   });
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const [characterMenu, setCharacterMenu] = useState([
     <button onClick={() => setShowMenu(false)}>Close</button>,
     <button>Attack</button>,
