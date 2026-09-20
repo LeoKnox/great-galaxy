@@ -24,8 +24,8 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     let temp = [x + offsety, y, z + offsetz];
     let c = stairsLoc.findIndex((value) =>
-      
-      value.position.every((coord, loc) => coord === temp[loc])
+      Object.values(value) == temp
+      //value.position.every((coord, loc) => coord === temp[loc])
     );
     console.log(c)
     if (c) {
