@@ -12,11 +12,12 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     position: [-0.5, 0, -1.5],
   });
   const stairsLoc = [
-    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0] },
+    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0], options:<button>climb</button> },
     {
       position: [3.5, 0, -1.5],
       rotation: [0, Math.PI / 2, 0],
       color: "lightGray",
+      options:<button>climb</button>
     },
   ];
 
@@ -26,7 +27,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       value.position.every((coord, loc) => coord == temp[loc])
     );
     if (c) {
-      setCharacterMenu([...characterMenu,<button>climb</button>])
+      setCharacterMenu([...characterMenu,stairsLoc.options])
       setShowMenu(true);
       
       return [x + offsetx, offsety + 1, z + offsetz];
