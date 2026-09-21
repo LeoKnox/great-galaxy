@@ -22,11 +22,14 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
   ];
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
-    let temp = [x + offsety, y, z + offsetz];
-    let c = stairsLoc.find((value) =>
+    let c = stairLoc.find(object =>
+    object.position.every((value, index) =>
+      value === stairsLoc.position[index]
+    ))
+    /*let c = stairsLoc.find((value) =>
       Object.values(value) == temp
       //value.position.every((coord, loc) => coord === temp[loc])
-    );
+    );*/
     console.log(c)
     if (c) {
       setCharacterMenu([...characterMenu,<button>climb</button>])
