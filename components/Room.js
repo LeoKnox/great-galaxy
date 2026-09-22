@@ -22,9 +22,10 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
   ];
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
-    let c = stairLoc.find(object =>
-    object.position.every((value, index) =>
-      value === stairsLoc.position[index]
+    let temp = [x, y, z]
+    let c = objects.find(one =>
+    one.position.every((value, index) =>
+      value === characterPosition[index]
     ))
     /*let c = stairsLoc.find((value) =>
       Object.values(value) == temp
