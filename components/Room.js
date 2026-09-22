@@ -25,7 +25,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     let temp = [x, y, z]
     let c = stairsLoc.find(one =>
     one.position.every((value, index) =>
-      value === characterPosition[index]
+      value === characterPosition.position[index]
     ))
     /*let c = stairsLoc.find((value) =>
       Object.values(value) == temp
