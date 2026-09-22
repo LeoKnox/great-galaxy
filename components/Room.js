@@ -32,7 +32,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       //value.position.every((coord, loc) => coord === temp[loc])
     );*/
     console.log(c)
-    if (c) {
+    if (c!=-1) {
       setCharacterMenu([...characterMenu,<button>climb</button>])
       setShowMenu(true);
       
