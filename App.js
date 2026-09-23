@@ -15,8 +15,9 @@ export default function App() {
   });
   const [showMenu, setShowMenu] = useState(false);
   const [characterMenu, setCharacterMenu] = useState([
-    <button onClick={() => setShowMenu(false)}>Close</button>,
-    <button>Attack</button>,
+    //<button onClick={() => setShowMenu(false)}>Close</button>,
+    ["Close",() => setShowMenu(false)],
+    ["Attack"],
   ]);
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
@@ -48,7 +49,7 @@ export default function App() {
       {showMenu && (
         <div className="collision-menu">
           <p>You collided with the stairs.</p>
-          {characterMenu.map((action, index) => <button>action</button>)}
+          {characterMenu.map((action, index) => <button>{action[0]}</button>)}
         </div>
       )}
       <playerInfo character={character} />
