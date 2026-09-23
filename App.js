@@ -48,7 +48,7 @@ export default function App() {
       {showMenu && (
         <div className="collision-menu">
           <p>You collided with the stairs.</p>
-          {characterMenu.map((action, index) => action)}
+          {characterMenu.map((action, index) => <button>action</button>)}
         </div>
       )}
       <playerInfo character={character} />
