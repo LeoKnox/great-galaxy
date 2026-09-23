@@ -12,12 +12,12 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     position: [-0.5, 0, -1.5],
   });
   const stairsLoc = [
-    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0], options:<button>climb</button> },
+    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0], options:"climb" },
     {
       position: [3.5, 0, -1.5],
       rotation: [0, Math.PI / 2, 0],
       color: "lightGray",
-      options:<button>climb</button>
+      options:"climb"
     },
   ];
 
@@ -28,7 +28,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       value === temp[index]
     ))
     if (c!=-1) {
-      setCharacterMenu([...characterMenu,<button>climb</button>])
+      setCharacterMenu([...characterMenu,stairsLoc[0].options])
       setShowMenu(true);
       return [x + offsetx, offsety + 1, z + offsetz];
     }
