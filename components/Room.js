@@ -36,7 +36,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     }
     setShowMenu(false);
     console.log(characterMenu);
-    const newoptions = characterMenu.filter((item,index) => item != stairsLoc[index].options[0]);
+    const newoptions = characterMenu.filter((item,index) => item != "climb");
     
     setCharacterMenu(newoptions)
     return [x + offsetx, offsety, z + offsetz];
