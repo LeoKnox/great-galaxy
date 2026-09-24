@@ -28,7 +28,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       value === temp[index]
     ))
     if (c!=-1) {
-      setCharacterMenu([...characterMenu,stairsLoc[index].options])
+      setCharacterMenu([...characterMenu,stairsLoc[c].options])
       setShowMenu(true);
       return [x + offsetx, offsety + 1, z + offsetz];
     }
