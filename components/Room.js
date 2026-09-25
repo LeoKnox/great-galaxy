@@ -27,17 +27,14 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     one.position.every((value, index) =>
       value === temp[index]
     ))
-    console.log("c " + c);
     if (c!=-1) {
-      console.log("sl "+stairsLoc[c].options)
+      if (characterMenu.includes(stairsLoc[c].options[0])){
       setCharacterMenu([...characterMenu,stairsLoc[c].options])
-      setShowMenu(true);
+      setShowMenu(true);}
       return [x + offsetx, offsety + 1, z + offsetz];
     }
     setShowMenu(false);
-    console.log(stairsLoc[0].options);
-    const newoptions = characterMenu.filter((item,index) => item != stairsLoc[c].options[0]);
-    
+    const newoptions = characterMenu.filter((item,index) => item != stairsLoc[0].options[0]);
     setCharacterMenu(newoptions)
     return [x + offsetx, offsety, z + offsetz];
   }
