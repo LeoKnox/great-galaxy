@@ -33,13 +33,15 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       setCharacterMenu([...characterMenu,stairsLoc[c].options])
       setShowMenu(true);
       return [x + offsetx, offsety + 1, z + offsetz];
-    }
+    } else {
+    console.log("c"+c)
     setShowMenu(false);
+    
     if (!characterMenu.includes(stairsLoc[c].options)){
     const newoptions = characterMenu.filter((item,index) => item != stairsLoc[0].options[0]);
     }
     setCharacterMenu(newoptions)
-    return [x + offsetx, offsety, z + offsetz];
+    return [x + offsetx, offsety, z + offsetz];}
   }
 
   useEffect(() => {
