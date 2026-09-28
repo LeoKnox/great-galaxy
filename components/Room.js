@@ -32,6 +32,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       setCharacterMenu([...characterMenu,stairsLoc[c].options])
       }
       setShowMenu(true);
+      setCharacterMenu(characterMenu)
       return [x + offsetx, offsety + 1, z + offsetz];
     }
     
