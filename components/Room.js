@@ -28,16 +28,11 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       value === temp[index]
     ))
     if (c!=-1) {
-      console.log("if "+characterMenu.includes(stairsLoc[c].options))
-      console.log("cm " + characterMenu);
-      console.log("sl " +stairsLoc[c].options)
-      //if (!characterMenu.includes(stairsLoc[c].options[0])){
-        if (!characterMenu.some((clear) => clear===stairsLoc[c].options)){
+        if (!characterMenu.some((clear) => clear==stairsLoc[c].options[0])){
       setCharacterMenu([...characterMenu,stairsLoc[c].options])
       setShowMenu(true);}
       return [x + offsetx, offsety + 1, z + offsetz];
     }
-    console.log("c"+c)
     setShowMenu(false);
     
     
