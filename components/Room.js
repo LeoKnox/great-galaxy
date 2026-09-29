@@ -17,7 +17,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
       position: [3.5, 0, -1.5],
       rotation: [0, Math.PI / 2, 0],
       color: "lightGray",
-      options:["climb"]
+      options:["climb","cover"]
     },
   ];
 
