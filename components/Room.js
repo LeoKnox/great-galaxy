@@ -29,13 +29,11 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     ))
     if (c!=-1) {
         if (!characterMenu.some((clear) => clear==stairsLoc[c].options[0])){
-      setCharacterMenu([...characterMenu,stairsLoc[c].options])
+      setCharacterMenu([...characterMenu,...stairsLoc[c].options])
       }
       setShowMenu(true);
-      setCharacterMenu(characterMenu)
       return [x + offsetx, offsety + 1, z + offsetz];
     }
-    
     setShowMenu(false);
     
     
