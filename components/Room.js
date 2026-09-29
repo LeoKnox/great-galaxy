@@ -40,7 +40,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     setShowMenu(false);
     
     
-    const newoptions = characterMenu.filter((item,index) => !stairsLoc[0].options.includes(item));
+    const newoptions = characterMenu.filter((item,index) => !stairsLoc[index].options.includes(item));
     setCharacterMenu(newoptions)
     return [x + offsetx, offsety, z + offsetz];
   }
