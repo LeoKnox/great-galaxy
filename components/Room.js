@@ -30,7 +30,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     if (c!=-1) {
       console.log("cl options "+stairsLoc[c].options)
         if (!characterMenu.some((clear, index) => clear==stairsLoc[c].options[index])){
-      setCharacterMenu([...characterMenu, ...stairsLoc[c].options[index]])
+      setCharacterMenu([...characterMenu, ...stairsLoc[c].options[0]])
       } else {
         setCharacterMenu([...characterMenu])
       }
