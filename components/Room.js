@@ -27,21 +27,32 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
     one.position.every((value, index) =>
       value === temp[index]
     ))
-    if (c!=-1) {
-      console.log("cl options "+stairsLoc[c].options)
-      if (!characterMenu.some((clear, index) => clear==stairsLoc[c].options[index])){
-        setCharacterMenu([...characterMenu, ...stairsLoc[c].options])
-      } else {
-        setCharacterMenu([...characterMenu])
-      }
-      setShowMenu(true);
-      return [x + offsetx, offsety + 1, z + offsetz];
-    }
-    setShowMenu(false);
-    const newoptions = characterMenu.filter((item,index) => !stairsLoc[index].options.includes(item));
-    console.log(...newoptions)
-    setCharacterMenu(newoptions)
-    return [x + offsetx, offsety, z + offsetz];
+    const newPosition = [x + offsetx, y, z + offsetz];
+
+  const stair = stairsLoc.find((stair) =>
+    stair.position.every((value, index) => value === newPosition[index])
+  );
+
+  if (stair) {
+    setCharacterMenu((currentMenu) => [
+      ...new Set([...currentMenu, ...stair.options]),
+    ]);
+
+    setShowMenu(true);
+
+    return [newPosition[0], offsety + 1, newPosition[2]];
+  }
+
+  setCharacterMenu((currentMenu) =>
+    currentMenu.filter(
+      (option) =>
+        !stairsLoc.some((stair) => stair.options.includes(option))
+    )
+  );
+
+  setShowMenu(false);
+
+  return [newPosition[0], offsety, newPosition[2]];
   }
 
   useEffect(() => {
