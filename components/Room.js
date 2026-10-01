@@ -35,7 +35,7 @@ export default function Room({ characterMenu, setCharacterMenu, setShowMenu }) {
 
   if (stair) {
     setCharacterMenu((currentMenu) => [
-      ...new Set([...currentMenu, ...stair.options]),
+      ...new Set([...currentMenu, ...stair.options[0]]),
     ]);
 
     setShowMenu(true);
