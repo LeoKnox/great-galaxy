@@ -3,7 +3,6 @@ import PlayerInfo from "./PlayerInfo";
 import Character from "./Character";
 import Floor from "./Floor";
 import Walls from "./Walls";
-
 import Monsters from "./Monsters";
 import { useState, useEffect } from "react";
 
@@ -17,7 +16,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       position: [3.5, 0, -1.5],
       rotation: [0, Math.PI / 2, 0],
       color: "lightGray",
-      options:["climb","cover"]
+      options:["climb",["cover", () => setShowMenu(false)]]
     },
   ];
 
@@ -27,17 +26,13 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
   const stair = stairsLoc.find((stair) =>
     stair.position.every((value, index) => value === newPosition[index])
   );
-console.log(stair)
   if (stair) {
     setCharacterMenu((currentMenu) => [
       ...new Set([...currentMenu, ...stair.options]),
     ]);
-
     setShowMenu(true);
-
     return [newPosition[0], offsety + 1, newPosition[2]];
   }
-
   setCharacterMenu((currentMenu) =>
     currentMenu.filter(
       (option) =>
