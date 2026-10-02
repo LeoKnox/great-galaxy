@@ -36,7 +36,7 @@ console.log(stair)
   if (stair) {
     console.log("st "+ [...stair.options]);
     setCharacterMenu((currentMenu) => [
-      ...new Set([...currentMenu, ...stair.options]),
+      [...currentMenu, ...stair.options]
     ]);
 
     setShowMenu(true);
