@@ -5,7 +5,7 @@ export default function createCharacter(
   rotation = [0, 0, 0]
 ) {
   const character = new THREE.Group();
-
+console.log("pos "+position)
   character.position.set(...position);
   character.rotation.set(...rotation);
 
