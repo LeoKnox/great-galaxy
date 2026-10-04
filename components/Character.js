@@ -6,7 +6,7 @@ export default function createCharacter(
 ) {
   const character = new THREE.Group();
 console.log(position.position)
-  character.position.set([...position]);
+  character.position.set(position);
   //character.rotation.set(...rotation);
 
   // Cone
