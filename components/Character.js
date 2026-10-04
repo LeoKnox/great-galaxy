@@ -5,9 +5,9 @@ export default function createCharacter(
   rotation = [0, 0, 0]
 ) {
   const character = new THREE.Group();
-console.log("pos "+position)
-  character.position.set(...position);
-  character.rotation.set(...rotation);
+console.log(position)
+  character.position.set(...position.position);
+  //character.rotation.set(...rotation);
 
   // Cone
   const coneGeometry = new THREE.ConeGeometry(1, 2, 16);
