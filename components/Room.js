@@ -105,7 +105,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       ))}
 
       <Character
-        position={[...characterPosition.position]}
+        position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
       <Monsters />
