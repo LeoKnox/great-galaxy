@@ -1,6 +1,5 @@
 import "./styles.css";
 import PlayerInfo from "./components/PlayerInfo";
-import Character from "./components/Character";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useState } from "react";
 
@@ -46,10 +45,7 @@ export default function App() {
    
           <Room characterMenu={characterMenu} setCharacterMenu={setCharacterMenu} setShowMenu={setShowMenu} />
       </Canvas>
-      <Character
-        x={[1,1,1]}
-        rotation={[0, 0, 0]}
-      />
+
       {showMenu && (
         <div className="collision-menu">
           <p>You collided with the stairs.</p>
