@@ -104,12 +104,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
         />
       ))}
 
-      <Character
-        x={characterPosition.position[0]}
-        z={characterPosition.position[1]}
-        y={characterPosition.position[2]}
-        rotation={[0, 0, 0]}
-      />
+      
       <Monsters />
     </>
   );
