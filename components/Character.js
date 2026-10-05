@@ -1,13 +1,13 @@
 import * as THREE from "three";
 
 export default function createCharacter(
-  //position = [0, 0, 0],
-  [x,y,z],
+  position = [0, 0, 0],
+  //[x,y,z],
   rotation = [0, 0, 0]
 ) {
   const character = new THREE.Group();
-console.log(position.position)
-  character.position.set(position);
+console.log(position)
+  character.position.set(...position);
   //character.rotation.set(...rotation);
 
   // Cone
