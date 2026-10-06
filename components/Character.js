@@ -1,9 +1,9 @@
 import * as THREE from "three";
 
 export default function createCharacter(
-  position = [0, 0, 0],
+  {position = [0, 0, 0],
   //x,y,z,
-  rotation = [0, 0, 0]
+  rotation = [0, 0, 0]}
 ) {
   const character = new THREE.Group();
 
@@ -25,7 +25,7 @@ export default function createCharacter(
   circle.rotation.x = -Math.PI / 2;
   character.add(circle);
 
-  character.position.set([3,0,3]);
+  character.position.set(...position);
   character.rotation.set(...rotation);
 
   return <primitive object={character} />;
