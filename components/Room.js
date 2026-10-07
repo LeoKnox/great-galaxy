@@ -97,24 +97,14 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
 
-      <Floor width={12} depth={8} />
-      <Walls />
-
-      {stairsLoc.map((stair, index) => (
-        <Stairs
-          key={index}
-          position={stair.position}
-          rotation={stair.rotation}
-          color={stair.color}
-        />
-      ))}
 
       <Character
         position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
 
-      <Monsters />
+
     </>
+
   );
 }
