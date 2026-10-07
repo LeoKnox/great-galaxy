@@ -1,3 +1,4 @@
+import { Canvas } from '@react-three/fiber';
 import Stairs from "./Stairs";
 import PlayerInfo from "./PlayerInfo";
 import Character from "./Character";
@@ -93,21 +94,26 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
 
   return (
     <>
+      <ambientLight intensity={0.6} />
+      <directionalLight position={[5, 10, 5]} intensity={1} />
+
       <Floor width={12} depth={8} />
       <Walls />
 
-      {stairsLoc.map((i, v) => (
+      {stairsLoc.map((stair, index) => (
         <Stairs
-          position={[...stairsLoc[v].position]}
-          rotation={[...stairsLoc[v].rotation]}
-          color={stairsLoc[v].color}
+          key={index}
+          position={stair.position}
+          rotation={stair.rotation}
+          color={stair.color}
         />
       ))}
 
       <Character
-        position={[...characterPosition.position]}
+        position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
+
       <Monsters />
     </>
   );
