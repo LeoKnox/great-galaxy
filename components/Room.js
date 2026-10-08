@@ -11,7 +11,7 @@ export default function Floor({
   dark = "#6b4423",
   }) {
     const texture = useMemo(() => {
-      const data = new Uint8Array(width * depth * 4);
+      const data = new Uint8Array(width * depth * 6);
       const lightColor = new THREE.Color(light);
       const darkColor = new THREE.Color(dark);
   
@@ -44,11 +44,11 @@ export default function Floor({
   
     return (
       <mesh
-        position={[0,0,0]}
+        position={[2,0,0]}
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
-        <planeGeometry args={[depth, width]} />
+        <planeGeometry args={[width, depth]} />
         <meshStandardMaterial map={texture} />
       </mesh>
     );
