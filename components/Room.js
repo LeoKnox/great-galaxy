@@ -44,7 +44,7 @@ export default function Floor({
   
     return (
       <mesh
-        position={[2,-3,0]}
+        position={[-1,-3,0]}
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
