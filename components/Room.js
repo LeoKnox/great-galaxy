@@ -11,7 +11,7 @@ export default function Floor({
   dark = "#6b4423",
   }) {
     const texture = useMemo(() => {
-      const data = new Uint8Array(width * depth * 6);
+      const data = new Uint8Array(width * depth * 4);
       const lightColor = new THREE.Color(light);
       const darkColor = new THREE.Color(dark);
   
