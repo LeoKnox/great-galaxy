@@ -1,110 +1,55 @@
-import { Canvas } from '@react-three/fiber';
-import Stairs from "./Stairs";
-import PlayerInfo from "./PlayerInfo";
-import Character from "./Character";
-import Floor from "./Floor";
-import Walls from "./Walls";
-import Monsters from "./Monsters";
-import { useState, useEffect } from "react";
+import * as THREE from "three";
+import { useMemo } from "react";
 
-export default function Room({ setCharacterMenu, setShowMenu }) {
-  const [characterPosition, setCharacterPosition] = useState({
-    position: [-0.5, 0, -1.5],
-  });
-  const stairsLoc = [
-    { position: [-3.5, 0, 0.5], rotation: [0, 0, 0], options:["climb","jump"] },
-    {
-      position: [3.5, 0, -1.5],
-      rotation: [0, Math.PI / 2, 0],
-      color: "lightGray",
-      options:["climb",["cover", () => setShowMenu(false)]]
-    },
-  ];
+import FloorTile from "./FloorTile.js";
+import Stairs from "./Stairs.js";
 
-  function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
-    const newPosition = [x + offsetx, y, z + offsetz];
-
-  const stair = stairsLoc.find((stair) =>
-    stair.position.every((value, index) => value === newPosition[index])
-  );
-  if (stair) {
-    setCharacterMenu((currentMenu) => [
-      ...new Set([...currentMenu, ...stair.options]),
-    ]);
-    setShowMenu(true);
-    return [newPosition[0], offsety + 1, newPosition[2]];
-  }
-  setCharacterMenu((currentMenu) =>
-    currentMenu.filter(
-      (option) =>
-        !stairsLoc.some((stair) => stair.options.includes(option))
-    )
-  );
-
-  setShowMenu(false);
-
-  return [newPosition[0], offsety, newPosition[2]];
-  }
-
-  useEffect(() => {
-    function handleKeyDown(event) {
-      const [x, y, z] = [...characterPosition.position];
-      const key = event.key.toLowerCase();
-
-      switch (key) {
-        case "w":
-          setCharacterPosition({
-            ...characterPosition,
-            position: collision(x, y, z, 0, 0, -1),
-          });
-          break;
-
-        case "s":
-          setCharacterPosition({
-            ...characterPosition,
-            position: collision(x, y, z, 0, 0, 1),
-          });
-          break;
-
-        case "a":
-          setCharacterPosition({
-            ...characterPosition,
-            position: collision(x, y, z, -1, 0, 0),
-          });
-          break;
-
-        case "d":
-          setCharacterPosition({
-            ...characterPosition,
-            position: collision(x, y, z, 1, 0, 0),
-          });
-          break;
-
-        default:
-          [x, y, z];
+export default function Floor({
+    width = 12,
+    depth = 8,
+    light = "#f0d9b5",
+  dark = "#6b4423",
+  }) {
+    const texture = useMemo(() => {
+      const data = new Uint8Array(8 * depth * 4);
+      const lightColor = new THREE.Color(light);
+      const darkColor = new THREE.Color(dark);
+  
+      for (let y = 0; y < 8; y++) {
+        for (let x = 0; x < 8; x++) {
+          const color = (x + y) % 2 === 0 ? lightColor : darkColor;
+          const index = (y * depth + x) * 4;
+  
+          data[index] = Math.round(color.r * 255);
+          data[index + 1] = Math.round(color.g * 255);
+          data[index + 2] = Math.round(color.b * 255);
+          data[index + 3] = 255;
+        }
       }
-    }
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [characterPosition]);
-
-  return (
-    <>
-      <ambientLight intensity={0.6} />
-      <directionalLight position={[5, 10, 5]} intensity={1} />
-
-
-      <Character
-        position={characterPosition.position}
-        rotation={[0, 0, 0]}
-      />
-<Floor />
-
-    </>
-
-  );
-}
+  
+      const map = new THREE.DataTexture(
+        data,
+        width,
+        depth,
+        THREE.RGBAFormat
+      );
+  
+      map.magFilter = THREE.NearestFilter;
+      map.minFilter = THREE.NearestFilter;
+      map.colorSpace = THREE.SRGBColorSpace;
+      map.needsUpdate = true;
+  
+      return map;
+    }, [depth, light, dark]);
+  
+    return (
+      <mesh
+        position={[0,0,0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        receiveShadow
+      >
+        <planeGeometry args={[width, depth]} />
+        <meshStandardMaterial map={texture} />
+      </mesh>
+    );
+  }
