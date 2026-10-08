@@ -1,25 +1,55 @@
+import * as THREE from "three";
+import { useMemo } from "react";
+
 import FloorTile from "./FloorTile.js";
+import Stairs from "./Stairs.js";
 
 export default function Floor({
     width = 12,
     depth = 8,
+    light = "#f0d9b5",
+  dark = "#6b4423",
   }) {
-    const tiles = [];
+    const texture = useMemo(() => {
+      const data = new Uint8Array(width * depth * 4);
+      const lightColor = new THREE.Color(light);
+      const darkColor = new THREE.Color(dark);
   
-    for (let z = 0; z < depth; z++) {
-      for (let x = 0; x < width; x++) {
-        const worldX = x - width / 2 + 0.5;
-        const worldZ = z - depth / 2 + 0.5;
+      for (let y = 0; y < width; y++) {
+        for (let x = 0; x < depth; x++) {
+          const color = (x + y) % 2 === 0 ? lightColor : darkColor;
+          const index = (y * depth + x) * 4;
   
-        tiles.push(
-          <FloorTile
-            key={`${x}-${z}`}
-            position={[worldX, 0, worldZ]}
-            color={(x + z) % 2 === 0 ? "#777b82" : "#6d7178"}
-          />
-        );
+          data[index] = Math.round(color.r * 255);
+          data[index + 1] = Math.round(color.g * 255);
+          data[index + 2] = Math.round(color.b * 255);
+          data[index + 3] = 255;
+        }
       }
-    }
   
-    return <group>{tiles}</group>;
+      const map = new THREE.DataTexture(
+        data,
+        width,
+        depth,
+        THREE.RGBAFormat
+      );
+  
+      map.magFilter = THREE.NearestFilter;
+      map.minFilter = THREE.NearestFilter;
+      map.colorSpace = THREE.SRGBColorSpace;
+      map.needsUpdate = true;
+  
+      return map;
+    }, [depth, light, dark]);
+  
+    return (
+      <mesh
+        position={[0,0,0]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        receiveShadow
+      >
+        <planeGeometry args={[width, depth]} />
+        <meshStandardMaterial map={texture} />
+      </mesh>
+    );
   }
