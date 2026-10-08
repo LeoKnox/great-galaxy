@@ -15,8 +15,8 @@ export default function Floor({
       const lightColor = new THREE.Color(light);
       const darkColor = new THREE.Color(dark);
   
-      for (let y = 0; y < 8; y++) {
-        for (let x = 0; x < 12; x++) {
+      for (let y = 0; y < depth; y++) {
+        for (let x = 0; x < width; x++) {
           const color = (x + y) % 2 === 0 ? lightColor : darkColor;
           const index = (y * width + x) * 4;
   
