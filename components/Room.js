@@ -48,7 +48,7 @@ export default function Floor({
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
-        <planeGeometry args={[width, depth]} />
+        <planeGeometry args={[depth, width]} />
         <meshStandardMaterial map={texture} />
       </mesh>
     );
