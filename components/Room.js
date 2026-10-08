@@ -102,7 +102,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
         position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
-
+<Floor />
 
     </>
 
