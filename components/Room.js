@@ -103,8 +103,8 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
         position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
-<Floor />
-<Chest />
+<Floor width={12} depth={8}/>
+<Chest chestObject={{x:1,Y:1, color:"gold", treasure:[1]}}/>
     </>
 
   );
