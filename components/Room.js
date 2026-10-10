@@ -2,6 +2,7 @@ import { Canvas } from '@react-three/fiber';
 import Stairs from "./Stairs";
 import PlayerInfo from "./PlayerInfo";
 import Character from "./Character";
+import Chest from "./Chest";
 import Floor from "./Floor";
 import Walls from "./Walls";
 import Monsters from "./Monsters";
@@ -93,13 +94,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
   }, [characterPosition]);
 
   return (
-    <canvas 
-    camera={{
-      position: [-1, 12, 0], // above the board
-      zoom: 45,              // lower this if the board is cropped
-      near: 0.1,
-      far: 100,
-    }>
+    <>
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
 
@@ -109,8 +104,8 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
         rotation={[0, 0, 0]}
       />
 <Floor />
-
-    </canvas>
+<Chest />
+    </>
 
   );
 }
