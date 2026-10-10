@@ -24,12 +24,11 @@ export default function App() {
         orthographic
         shadows
         camera={{
-          position: [0, 12, 0],
-          rotation: [-Math.PI / 2, 0, 0],
-          zoom: 30,
-          near: 0.1,
-          far: 100,
-        }}
+    position: [-1, 12, 0], 
+    zoom: 45,              
+    near: 0.1,
+    far: 100,
+  }}
       >
         <color attach="background" args={["#202228"]} />
 
