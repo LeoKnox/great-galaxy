@@ -26,7 +26,7 @@ export default function App() {
         camera={{
           position: [0, 12, 0],
           rotation: [-Math.PI / 2, 0, 0],
-          zoom: 65,
+          zoom: 30,
           near: 0.1,
           far: 100,
         }}
