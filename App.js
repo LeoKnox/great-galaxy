@@ -1,12 +1,14 @@
 import "./styles.css";
+import { useThree } from "@react-three/fiber";
 import PlayerInfo from "./components/PlayerInfo";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 
 import Room from "./components/Room";
 import { CharacterMenuProvider } from "./components/CharacterMenuContext";
 
 export default function App() {
+  
   const [character, setCharacter] = useState({
     name: "Midori",
     class: "fighter",
@@ -18,6 +20,18 @@ export default function App() {
     ["Close",() => setShowMenu(false)],
     ["Attack"],
   ]);
+  function BoardCamera() {
+    const { camera } = useThree();
+  
+    useEffect(() => {
+      camera.position.set(-1, 12, 0);
+      camera.up.set(0, 0, -1); // set before lookAt for a top-down view
+      camera.lookAt(-1, -3, 0);
+      camera.updateProjectionMatrix();
+    }, [camera]);
+  
+    return null;
+  }
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <Canvas
@@ -30,6 +44,7 @@ export default function App() {
     far: 100,
   }}
       >
+         <BoardCamera />
         <color attach="background" args={["#202228"]} />
 
         <ambientLight intensity={1.5} />
