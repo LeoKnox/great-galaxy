@@ -1,10 +1,10 @@
 import { useMemo } from "react";
 import * as THREE from "three";
 
-export default function Chest() {
+export default function Chest({x,y,chestColor,treasure}) {
   const mesh = useMemo(() => {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshStandardMaterial({ color: "orange" });
+    const material = new THREE.MeshStandardMaterial({ color: chestColor });
     return new THREE.Mesh(geometry, material);
   }, []);
 
