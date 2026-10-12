@@ -13,5 +13,5 @@ export default function Walls() {
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[-2, 1.5, 2]} />;
+    return <primitive object={mesh} position={[-2, 1.5, 2, 90, 90, 90]} />;
   }
