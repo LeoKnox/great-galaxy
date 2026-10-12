@@ -38,8 +38,7 @@ export default function App() {
         orthographic
         shadows
         camera={{
-    position: [-1, 12, 0], 
-    zoom: 45,              
+    position: [-1, 12, 0],              
     near: 0.1,
     far: 100,
     fov: 50
