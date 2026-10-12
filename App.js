@@ -41,6 +41,7 @@ export default function App() {
     position: [-1, 12, 0],              
     near: 0.1,
     far: 100,
+    zoom: 40, 
     fov: 50
   }}
       >
