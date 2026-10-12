@@ -42,6 +42,7 @@ export default function App() {
     zoom: 45,              
     near: 0.1,
     far: 100,
+    fov: 50
   }}
       >
          <BoardCamera />
