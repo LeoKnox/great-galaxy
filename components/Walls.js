@@ -9,9 +9,9 @@ export default function Walls() {
   
     const mesh = useMemo(() => {
       const geometry = new THREE.PlaneGeometry(1, 1, );
-      const material = new THREE.MeshStandardMaterial({ color: "red" });
+      const material = new THREE.MeshStandardMaterial({ color: "red", side: THREE.DoubleSide });
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[-2, 0.5, 2]} />;
+    return <primitive object={mesh} position={[-2, 1.5, 2]} />;
   }
