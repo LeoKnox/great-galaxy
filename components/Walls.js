@@ -8,10 +8,10 @@ export default function Walls() {
     const roomDepth = 8;
   
     const mesh = useMemo(() => {
-      const geometry = new THREE.PlaneGeometry(1, 1, );
+      const geometry = new THREE.PlaneGeometry(5, 5, );
       const material = new THREE.MeshStandardMaterial({ color: "#ffffff", side: THREE.DoubleSide });
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[-2, 1.5, 2, 90, 90, 90]} />;
+    return <primitive object={mesh} position={[-2, 1.5, 2]} rotation={[0, Math.PI / 2, 0]}/>;
   }
