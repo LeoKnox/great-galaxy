@@ -9,7 +9,7 @@ export default function Walls() {
   
     const mesh = useMemo(() => {
       const geometry = new THREE.PlaneGeometry(1, 1, );
-      const material = new THREE.MeshStandardMaterial({ color: "red", side: THREE.DoubleSide });
+      const material = new THREE.MeshStandardMaterial({ color: "#ffffff", side: THREE.DoubleSide });
       return new THREE.Mesh(geometry, material);
     }, []);
   
