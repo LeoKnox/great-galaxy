@@ -13,5 +13,10 @@ export default function Walls() {
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[0,0,0]} rotation={[0, Math.PI / 2, 0]}/>;
+    return (
+      <mesh position={[1,1]}>
+        <boxGeometry args={[5, 2, 2]} />
+        <meshStandardMaterial color="red" />
+      </mesh>
+    )
   }
