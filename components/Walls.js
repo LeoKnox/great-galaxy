@@ -13,10 +13,10 @@ export default function Walls() {
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return (
-      <mesh position={[1,1]}>
-        <boxGeometry args={[5, 2, 2]} />
-        <meshStandardMaterial color="red" />
-      </mesh>
-    )
+    const geometry = new THREE.BoxGeometry(3, 3, 3);
+  const material = new THREE.MeshStandardMaterial("red");
+  const wall = new THREE.Mesh(geometry, material);
+
+  wall.position.set([-2,-2]);
+  return wall;
   }
