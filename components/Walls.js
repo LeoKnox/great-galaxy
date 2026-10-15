@@ -15,5 +15,5 @@ export default function Walls() {
 
 
   //wall.position.set([2,2,2]);
-return <primitive object={wall} />;
+return <primitive object={wall}  position={[1, 0.5, 1]}/>;
   }
