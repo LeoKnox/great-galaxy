@@ -8,7 +8,7 @@ export default function Walls() {
     const roomDepth = 8;
   
     const mesh = useMemo(() => {
-      const geometry = new THREE.BoxGeometry(.8, 1, .8);
+      const geometry = new THREE.PlaneGeometry(7, 2);
       const material = new THREE.MeshStandardMaterial({ color: "red" });
       return new THREE.Mesh(geometry, material);
     }, []);
