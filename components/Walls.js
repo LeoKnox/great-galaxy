@@ -7,13 +7,11 @@ export default function Walls() {
     const roomWidth = 12;
     const roomDepth = 8;
   
-    const wall = useMemo(() => {
-      const geometry = new THREE.PlaneGeometry(5, 5, );
-      const material = new THREE.MeshStandardMaterial({ color: "red", side: THREE.DoubleSide });
+    const mesh = useMemo(() => {
+      const geometry = new THREE.BoxGeometry(.8, 1, .8);
+      const material = new THREE.MeshStandardMaterial({ color: "red" });
       return new THREE.Mesh(geometry, material);
     }, []);
-
-
-  //wall.position.set([2,2,2]);
-return <primitive object={wall}  position={[1, 0.5, 1]}/>;
+  
+    return <primitive object={mesh} position={[-2, 0.5, 2]} />;
   }
