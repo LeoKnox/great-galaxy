@@ -35,7 +35,7 @@ export default function App() {
   return (
     <div style={{ height: "100vh", width: "100vw" }}>
       <Canvas
-        orthographic
+        
         shadows
         camera={{
     position: [-1, 12, 0],              
@@ -45,7 +45,7 @@ export default function App() {
     fov: 50
   }}
       >
-         <BoardCamera />
+         
         <color attach="background" args={["#202228"]} />
 
         <ambientLight intensity={1.5} />
