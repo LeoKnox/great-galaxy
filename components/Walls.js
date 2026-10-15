@@ -18,5 +18,5 @@ export default function Walls() {
   const wall = new THREE.Mesh(geometry, material);
 
   wall.position.set([2,2,2]);
-<primitive object={wall} />;
+return <primitive object={wall} />;
   }
