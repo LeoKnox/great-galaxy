@@ -53,6 +53,7 @@ export default function App() {
         <directionalLight
           position={[5, 10, 5]}
           intensity={2}
+          color="blue"
           castShadow
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
