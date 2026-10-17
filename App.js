@@ -42,7 +42,7 @@ export default function App() {
     near: 0.1,
     far: 100,
     zoom: 40, 
-    fov: 50
+
   }}
       >
          
