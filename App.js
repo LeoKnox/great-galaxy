@@ -48,12 +48,11 @@ export default function App() {
          
         <color attach="background" args={["#202228"]} />
 
-        <ambientLight intensity={1.5} />
+        <ambientLight intensity={1.5} castShadow />
 
         <directionalLight
           position={[5, 10, 5]}
           intensity={2}
-          color="blue"
           castShadow
           shadow-mapSize-width={2048}
           shadow-mapSize-height={2048}
