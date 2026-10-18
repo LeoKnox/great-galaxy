@@ -13,5 +13,5 @@ export default function Walls() {
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[0, 0.5, -4]} rotation={[0, 0, 0] }  castShadow receiveShadow />;
+    return <primitive object={mesh} position={[-1, 0.5, -4]} rotation={[0, 0, 0] }  castShadow receiveShadow />;
   }
