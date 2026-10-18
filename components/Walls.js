@@ -8,10 +8,10 @@ export default function Walls() {
     const roomDepth = 8;
   
     const mesh = useMemo(() => {
-      const geometry = new THREE.PlaneGeometry(7, 2);
+      const geometry = new THREE.PlaneGeometry(roomWidth, roomDepth);
       const material = new THREE.MeshStandardMaterial({ color: "red", side: THREE.DoubleSide });
       return new THREE.Mesh(geometry, material);
     }, []);
   
-    return <primitive object={mesh} position={[-2, 0.5, 2]} rotation={[0, 0, 0] }  castShadow receiveShadow />;
+    return <primitive object={mesh} position={[0, 0.5, -4]} rotation={[0, 0, 0] }  castShadow receiveShadow />;
   }
