@@ -38,17 +38,17 @@ export default function App() {
         perspective
         shadows
         camera={{
-    position: [-1, 12, 0],              
+    position: [-1, 128, 0],              
     near: 0.1,
-    far: 100,
-    zoom: 40, 
+    far: 500,
+    zoom: 20, 
 
   }}
       >
          
         <color attach="background" args={["#202228"]} />
 
-        <ambientLight intensity={1.5} castShadow />
+        <ambientLight intensity={1.5} castShadow/>
 
         <directionalLight
           position={[5, 10, 5]}
