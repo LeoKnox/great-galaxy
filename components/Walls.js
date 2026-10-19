@@ -23,14 +23,14 @@ export default function Walls() {
         material
       );
       first.position.set(-1, 0.5, -4);
-      first.rotation.y = 0; // faces along the Z direction
+      first.rotation.y = 0; // second.rotation.y = Math.PI / 2;
   
       const second = new THREE.Mesh(
         new THREE.PlaneGeometry(-roomWidth, roomDepth),
         material
       );
-      second.position.set( 1, 0.5, 4);
-      second.rotation.y = 0; // perpendicular to the first
+      second.position.set( -1, 0.5, 4);
+      second.rotation.y = 0; 
   
       return [first, second];
     }, [roomWidth, roomDepth]);
