@@ -31,12 +31,13 @@ export default function Walls() {
       );
       second.position.set( -1, 0.5, 4);
       second.rotation.y = 0; 
+
       const northWall = new THREE.Mesh(
-        new THREE.PlaneGeometry(roomDepth, 1),
+        new THREE.PlaneGeometry(4, roomDepth),
         material
       );
-      second.position.set(roomWidth / 2, 0.5, 0);
-      second.rotation.y = Math.PI / 2; // perpendicular to the first
+      second.position.set(4, 0.5, 0);
+      second.rotation.y = Math.PI / 2;
   
       return [first, second,northWall];
       
