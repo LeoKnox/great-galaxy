@@ -12,6 +12,34 @@ export default function Walls() {
       const material = new THREE.MeshStandardMaterial({ color: "red", side: THREE.DoubleSide });
       return new THREE.Mesh(geometry, material);
     }, []);
+    const meshes = useMemo(() => {
+      const material = new THREE.MeshStandardMaterial({
+        color: "red",
+        side: THREE.DoubleSide,
+      });
   
-    return <primitive object={mesh} position={[-1, 0.5, -4]} rotation={[0, 0, 0] }  castShadow receiveShadow />;
+      const first = new THREE.Mesh(
+        new THREE.PlaneGeometry(roomWidth, 1),
+        material
+      );
+      first.position.set(-1, 0.5, -4);
+      first.rotation.y = 0; // faces along the Z direction
+  
+      const second = new THREE.Mesh(
+        new THREE.PlaneGeometry(roomDepth, 1),
+        material
+      );
+      second.position.set(-1 - roomWidth / 2, 0.5, 0);
+      second.rotation.y = Math.PI / 2; // perpendicular to the first
+  
+      return [first, second];
+    }, [roomWidth, roomDepth]);
+    return (<>{meshes.map((mesh, index) => (
+      <primitive
+        key={index}
+        object={mesh}
+        castShadow
+        receiveShadow
+      />
+    ))}</>)
   }
