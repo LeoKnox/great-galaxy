@@ -17,21 +17,21 @@ export default function Walls() {
         new THREE.PlaneGeometry(roomWidth, wallHeight),
         material
       );
-      first.position.set(-1, 0, -roomDepth/2);
+      first.position.set(-1, -0.5, -roomDepth/2);
       first.rotation.y = 0; // second.rotation.y = Math.PI / 2;
   
       const second = new THREE.Mesh(
         new THREE.PlaneGeometry(-roomWidth, wallHeight),
         material
       );
-      second.position.set( -1, 0.0, roomDepth/2);
+      second.position.set( -1, -0.5, roomDepth/2);
       second.rotation.y = 0; 
 
       const third = new THREE.Mesh(
         new THREE.PlaneGeometry(roomDepth, wallHeight),
         material
       );
-      third.position.set(roomDepth/2+1, 0.0, 0);
+      third.position.set(roomDepth/2+1, -0.5, 0);
       third.rotation.y = Math.PI / 2;
   
       return [first, second,third];
