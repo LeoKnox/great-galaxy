@@ -3,53 +3,35 @@ import React from "react";
 export default function Stairs({
   position = [0, 0, 0],
   rotation = [0, 0, 0],
-  color = "#9a613d",
+  color = "gray",
 }) {
-  const stairWidth = 1;
-  const stepDepth = .5;
-  const stepHeight = 0.25;
+  const mesh = useMemo(() => {
+    const group = new THREE.Group();
 
-  return (
-    <group position={position} rotation={rotation}>
-      {/* Lower step */}
-      <mesh
-        position={[
-          0,
-          stepHeight / 2,
-          -stepDepth / 2,
-        ]}
-        castShadow
-        receiveShadow
-      >
-        <boxGeometry
-          args={[
-            stairWidth,
-            stepHeight,
-            stepDepth,
-          ]}
-        />
-        <meshStandardMaterial color={color} />
-      </mesh>
+    const material = new THREE.MeshStandardMaterial({ color: color });
 
-      {/* Higher step */}
-      <mesh
-        position={[
-          0,
-          stepHeight + stepHeight / 2,
-          stepDepth / 2,
-        ]}
-        castShadow
-        receiveShadow
-      >
-        <boxGeometry
-          args={[
-            stairWidth,
-            stepHeight * 2,
-            stepDepth,
-          ]}
-        />
-        <meshStandardMaterial color={color} />
-      </mesh>
-    </group>
-  );
+    const steps = [
+      { width: 0.8, height: 1 },
+      { width: 0.8, height: 0.5 },
+    ];
+
+    steps.forEach(({ width, height }, index) => {
+      const geometry = new THREE.BoxGeometry(width, height, 0.8);
+      const box = new THREE.Mesh(geometry, material);
+
+      box.position.set(
+        index === 0 ? -width / 2 : width / 2, 
+        height / 2,                          
+        0
+      );
+
+      box.castShadow = true;
+      box.receiveShadow = true;
+      group.add(box);
+    });
+
+    return group;
+  }, [color]);
+
+  return <primitive object={mesh} position={[x, 0, y]} />;
 }
