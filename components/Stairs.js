@@ -2,14 +2,13 @@ import { useMemo } from "react";
 import * as THREE from "three";
 
 export default function Stairs({
-  position = [0, 0, 0],
-  rotation = [0, 0, 0],
+  roomInfo: {x,y, stairColor},
   color = "gray",
 }) {
   const mesh = useMemo(() => {
     const group = new THREE.Group();
 
-    const material = new THREE.MeshStandardMaterial({ color: "red" });
+    const material = new THREE.MeshStandardMaterial({ color: {stairColor} });
 
     const steps = [
       { width: 0.8, height: 1 },
@@ -30,7 +29,7 @@ export default function Stairs({
       box.receiveShadow = true;
       group.add(box);
     });
-
+//{x:-3,y:-3, chestColor:"#aaaaaa"}
     return group;
   }, [color]);
 
