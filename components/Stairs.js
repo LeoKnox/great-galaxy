@@ -1,4 +1,5 @@
-import React from "react";
+import { useMemo } from "react";
+import * as THREE from "three";
 
 export default function Stairs({
   position = [0, 0, 0],
@@ -33,5 +34,5 @@ export default function Stairs({
     return group;
   }, [color]);
 
-  return <primitive object={mesh} position={[-3, 0, -3]} />;
+  return <primitive object={mesh} position={[-3, 1, -3]} />;
 }
