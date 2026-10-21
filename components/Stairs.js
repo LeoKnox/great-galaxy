@@ -33,5 +33,5 @@ export default function Stairs({
     return group;
   }, [color]);
 
-  return <primitive object={mesh} position={[-3, 1, -3]} />;
+  return <primitive object={mesh} position={[x, 1, y]} />;
 }
