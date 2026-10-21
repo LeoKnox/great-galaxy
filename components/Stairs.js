@@ -8,7 +8,7 @@ export default function Stairs({
   const mesh = useMemo(() => {
     const group = new THREE.Group();
 
-    const material = new THREE.MeshStandardMaterial({ color: {stairColor} });
+    const material = new THREE.MeshStandardMaterial({ color: stairColor });
 
     const steps = [
       { width: 0.8, height: 1 },
