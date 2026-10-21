@@ -15,10 +15,10 @@ export default function Floor({
       const lightColor = new THREE.Color(light);
       const darkColor = new THREE.Color(dark);
   
-      for (let y = 0; y < width; y++) {
-        for (let x = 0; x < depth; x++) {
+      for (let y = 0; y < depth; y++) {
+        for (let x = 0; x < width; x++) {
           const color = (x + y) % 2 === 0 ? lightColor : darkColor;
-          const index = (y * depth + x) * 4;
+          const index = (y * width + x) * 4;
   
           data[index] = Math.round(color.r * 255);
           data[index + 1] = Math.round(color.g * 255);
@@ -26,7 +26,7 @@ export default function Floor({
           data[index + 3] = 255;
         }
       }
-  
+      console.log({ width, depth });
       const map = new THREE.DataTexture(
         data,
         width,
@@ -40,11 +40,11 @@ export default function Floor({
       map.needsUpdate = true;
   
       return map;
-    }, [depth, light, dark]);
+    }, [depth, width, light, dark]);
   
     return (
       <mesh
-        position={[0,0,0]}
+        position={[-1,-3,0]}
         rotation={[-Math.PI / 2, 0, 0]}
         receiveShadow
       >
