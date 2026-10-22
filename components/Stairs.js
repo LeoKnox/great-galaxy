@@ -38,7 +38,7 @@ export default function Stairs({
     [mesh]
   );
   
-  return 
+  return( 
     <>
     {stairLoc.map((individual, index) => (
       <primitive
@@ -48,5 +48,5 @@ export default function Stairs({
         rotation={[0, 0, Math.PI / 2]}
       />
     ))}
-  </>
+  </>)
 }
