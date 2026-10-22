@@ -5,6 +5,7 @@ export default function Stairs({
   roomInfo: {x,y, stairColor},
   color = "gray",
 }) {
+  const stairLoc=[{x: -3, y:-3},{x: -2, y:-2}]
   const mesh = useMemo(() => {
     const group = new THREE.Group();
 
@@ -32,5 +33,8 @@ export default function Stairs({
 
     return group;
   }, [color]);
-  return <primitive object={mesh} position={[x, 0, y]} rotation={[0, 0,Math.PI / 2]} />;
+  let temp = <>stairLoc.map((individual) = (
+<primitive object={mesh} position={[x, 0, y]} rotation={[0, 0,Math.PI / 2]} />
+  ))</>
+  return temp;
 }
