@@ -33,8 +33,8 @@ export default function Stairs({
 
     return group;
   }, [color]);
-  let temp = <>{stairLoc.map((individual) => {
-<primitive object={mesh} position={[individual.x, 0, y]} rotation={[0, 0,Math.PI / 2]} />
-  })}</>
-  return temp;
+  let temp = stairLoc.map((individual) => {
+<primitive object={mesh} position={[individual.x, 0, individual.y]} rotation={[0, 0,Math.PI / 2]} />
+  })
+  return <>temp</>;
 }
