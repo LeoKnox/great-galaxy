@@ -33,5 +33,5 @@ export default function Stairs({
     return group;
   }, [color]);
 
-  return <primitive object={mesh} position={[x, 1, y]} rotation={[0, 0,Math.PI / 2]} />;
+  return <primitive object={mesh} position={[x, 0, y]} rotation={[0, 0,Math.PI / 2]} />;
 }
