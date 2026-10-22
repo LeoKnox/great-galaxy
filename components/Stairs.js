@@ -29,9 +29,8 @@ export default function Stairs({
       box.receiveShadow = true;
       group.add(box);
     });
-//{x:-3,y:-3, chestColor:"#aaaaaa"}
+
     return group;
   }, [color]);
-
   return <primitive object={mesh} position={[x, 0, y]} rotation={[0, 0,Math.PI / 2]} />;
 }
