@@ -33,8 +33,20 @@ export default function Stairs({
 
     return group;
   }, [color]);
+  const stairs = useMemo(
+    () => stairLoc.map(() => mesh.clone(true)),
+    [mesh]
+  );
   
-  return <>{stairLoc.map((individual) => {
-    <primitive object={mesh} position={[individual.x, 0, individual.y]} rotation={[0, 0,Math.PI / 2]} />
-      })}</>;
+  return 
+    <>
+    {stairLoc.map((individual, index) => (
+      <primitive
+        key={index}
+        object={stairs[index]}
+        position={[individual.x, 0, individual.y]}
+        rotation={[0, 0, Math.PI / 2]}
+      />
+    ))}
+  </>
 }
