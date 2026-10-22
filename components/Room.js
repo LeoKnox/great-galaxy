@@ -105,8 +105,11 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       />
       <Walls />
 <Floor width={12} depth={8}/>
-<Stairs roomInfo={{x:-3,y:-3, stairColor:"#888888"}} />
+<Stairs roomInfo={{x:-3,y:-2.5, stairColor:"#888888"}} />
 <Chest chestObject={{x:1.5,y:2.5, chestColor:"gold", treasure:[1]}}/>
+    {stairsLoc.map(()=> (
+      <p>a</p>
+    ))}
     </>
 
   );
