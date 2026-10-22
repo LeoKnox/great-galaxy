@@ -11,12 +11,12 @@ export default function Stairs({
     const material = new THREE.MeshStandardMaterial({ color: stairColor });
 
     const steps = [
-      { width: 0.8, height: 1 },
-      { width: 0.8, height: 0.5 },
+      { width: 0.5, height: 1 },
+      { width: .5, height: 0.5 },
     ];
 
     steps.forEach(({ width, height }, index) => {
-      const geometry = new THREE.BoxGeometry(width, height, 0.8);
+      const geometry = new THREE.BoxGeometry(width, height, 1);
       const box = new THREE.Mesh(geometry, material);
 
       box.position.set(
