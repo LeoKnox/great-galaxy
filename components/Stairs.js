@@ -6,10 +6,11 @@ export default function Stairs({
   color = "gray",
 }) {
   const stairLoc=[{x: -3, y:-3},{x: -2, y:-2}]
+  const colors=["red", "green"]
   const mesh = useMemo(() => {
     const group = new THREE.Group();
 
-    const material = new THREE.MeshStandardMaterial({ color: stairColor });
+    //const material = new THREE.MeshStandardMaterial({ color: stairColor });
 
     const steps = [
       { width: 0.5, height: 1 },
@@ -18,6 +19,7 @@ export default function Stairs({
 
     steps.forEach(({ width, height }, index) => {
       const geometry = new THREE.BoxGeometry(width, height, 1);
+      const material = new THREE.MeshStandardMaterial({ color: colors[index] });
       const box = new THREE.Mesh(geometry, material);
 
       box.position.set(
@@ -45,7 +47,7 @@ export default function Stairs({
         key={index}
         object={stairs[index]}
         position={[individual.x, 0, individual.y]}
-        rotation={[0,Math.PI,  0]}
+        rotation={[0,Math.PI/2,  0]}
         //rotation={[0, 0, Math.PI/2]}
       />
     ))}
