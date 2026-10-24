@@ -45,7 +45,7 @@ export default function Stairs({
         key={index}
         object={stairs[index]}
         position={[individual.x, 0, individual.y]}
-        rotation={[90, 0, Math.PI / 2]}
+        rotation={[0, Math.PI / 2, Math.PI / 2]}
       />
     ))}
   </>)
