@@ -16,7 +16,7 @@ export default function createMonsters({
 
   const cone = new THREE.Mesh(coneGeometry, coneMaterial);
   monster.add(cone);
-  monster.position.set([1,1,1]);
+  monster.position.set(...[0.5, 0, 0.5]);
 
   return <primitive object={monster} />;
 }
