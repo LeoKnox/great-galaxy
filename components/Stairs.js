@@ -6,7 +6,7 @@ export default function Stairs({
   color = "gray",
 }) {
   const stairLoc=[{x: -3, y:-3},{x: -2, y:-2}]
-  const colors=["red", "green"]
+  const colors=["#bbbbbb", "#777777"]
   const mesh = useMemo(() => {
     const group = new THREE.Group();
 
