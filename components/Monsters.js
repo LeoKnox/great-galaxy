@@ -7,27 +7,22 @@ export default function createMonsters({
   ],
   rotation = [0, 0, 0],
 } = {}) {
-  const monsters = new THREE.Group();
+  const monster = new THREE.Group();
 
   const geometry = new THREE.SphereGeometry(0.5, 16, 16);
   const material = new THREE.MeshStandardMaterial({
     color: "indigo",
   });
+  
+  //const monster = new THREE.Group();
 
-  position.forEach((currentPosition) => {
-    const monster = new THREE.Mesh(
-      geometry,
-      material
-    );
-
-    monster.position.set(...currentPosition);
-    monster.castShadow = true;
-    monster.receiveShadow = true;
-
-    monsters.add(monster);
+  const coneGeometry = new THREE.ConeGeometry(1, 2, 16);
+  const coneMaterial = new THREE.MeshStandardMaterial({
+    color: "green",
   });
 
-  monsters.rotation.set(...rotation);
+  const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+  character.add(cone);
 
-  return monsters;
+  return monster;
 }
