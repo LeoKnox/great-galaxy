@@ -9,20 +9,13 @@ export default function createMonsters({
 } = {}) {
   const monster = new THREE.Group();
 
-  const geometry = new THREE.SphereGeometry(0.5, 16, 16);
-  const material = new THREE.MeshStandardMaterial({
-    color: "indigo",
-  });
-  
-  //const monster = new THREE.Group();
-
   const coneGeometry = new THREE.ConeGeometry(1, 2, 16);
   const coneMaterial = new THREE.MeshStandardMaterial({
-    color: "green",
+    color: "brown",
   });
 
   const cone = new THREE.Mesh(coneGeometry, coneMaterial);
-  character.add(cone);
+  monster.add(cone);
 
   return monster;
 }
