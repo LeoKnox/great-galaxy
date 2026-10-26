@@ -9,7 +9,7 @@ export default function createMonsters({
 } = {}) {
   const pack = new THREE.Group();
 
-
+  position.forEach(([x,y,z], index) => {
   const monster = new THREE.Group();
 
   const coneGeometry = new THREE.ConeGeometry(1, 2,8);
@@ -20,6 +20,10 @@ export default function createMonsters({
   const cone = new THREE.Mesh(coneGeometry, coneMaterial);
   monster.add(cone);
   monster.position.set(...position[0]);
+  pack.add(monster)
+
+  return pack
+});
 
 
   return( <>{position.map((individual, index) => (
