@@ -9,7 +9,7 @@ export default function createMonsters({
 } = {}) {
   const pack = new THREE.Group();
 
-  position.forEach({x,y,z}, index => {
+  position.forEach(([x,y,z], index) => {
   const monster = new THREE.Group();
 
   const coneGeometry = new THREE.ConeGeometry(1, 2,8);
