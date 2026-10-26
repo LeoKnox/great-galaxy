@@ -24,7 +24,7 @@ export default function createMonsters({
 
   return pack
 });
-
+console.log("p "+JSON.stringify(pack))
 
   return( <>{position.map((individual, index) => (
     <primitive object={pack[index]} />
