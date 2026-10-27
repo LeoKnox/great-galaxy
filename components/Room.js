@@ -98,16 +98,15 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       <ambientLight intensity={0.6} />
       <directionalLight position={[5, 10, 5]} intensity={1} />
 
-
+      <Floor width={12} depth={8}/>
+      <Walls />
+      <Monsters />
       <Character
         position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
-      <Walls />
-      <Monsters />
-<Floor width={12} depth={8}/>
-<Stairs roomInfo={{x:-3,y:-2.5, stairColor:"#888888"}} />
-<Chest chestObject={{x:1.5,y:2.5, chestColor:"gold", treasure:[1]}}/>
+      <Stairs roomInfo={{x:-3,y:-2.5, stairColor:"#888888"}} />
+      <Chest chestObject={{x:1.5,y:2.5, chestColor:"gold", treasure:[1]}}/>
     </>
 
   );
