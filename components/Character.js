@@ -7,7 +7,7 @@ export default function createCharacter(
 ) {
   const character = new THREE.Group();
 
-  const coneGeometry = new THREE.ConeGeometry(1, 2, 16);
+  const coneGeometry = new THREE.ConeGeometry(.5, 2, 16);
   const coneMaterial = new THREE.MeshStandardMaterial({
     color: "green",
   });
@@ -15,7 +15,7 @@ export default function createCharacter(
   const cone = new THREE.Mesh(coneGeometry, coneMaterial);
   character.add(cone);
 
-  const circleGeometry = new THREE.CircleGeometry(0.8, 24);
+  const circleGeometry = new THREE.CircleGeometry(0.4, 24);
   const circleMaterial = new THREE.MeshStandardMaterial({
     color: "blue",
     side: THREE.DoubleSide,
