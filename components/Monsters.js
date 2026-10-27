@@ -19,12 +19,11 @@ export default function createMonsters({
 
   const cone = new THREE.Mesh(coneGeometry, coneMaterial)
   monster.add(cone);
-  monster.position.set(...position[0]);
+  monster.position.set(...position[index]);
   pack.add(monster)
 
   return pack
 });
-console.log("p "+JSON.stringify(pack[0]))
 
   return( 
   <>
