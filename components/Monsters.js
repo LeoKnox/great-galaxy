@@ -17,19 +17,19 @@ export default function createMonsters({
     color: "brown",
   });
 
-  const cone = new THREE.Mesh(coneGeometry, coneMaterial);
+  const cone = new THREE.Mesh(coneGeometry, coneMaterial)
   monster.add(cone);
   monster.position.set(...position[0]);
   pack.add(monster)
 
   return pack
 });
-console.log("p "+JSON.stringify(pack))
+//console.log("p "+JSON.stringify(pack))
 
   return( 
   <>
   {position.map((individual, index) => (
-    <primitive object={pack[index]} position={...individual[index]} />
+    <primitive object={pack} position={[0.5, 0, 1.5]} />
   ))}
   </>
   )
