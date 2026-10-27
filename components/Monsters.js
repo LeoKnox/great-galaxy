@@ -29,7 +29,7 @@ export default function createMonsters({
   return( 
   <>
   {position.map((individual, index) => (
-    <primitive object={pack} position={[individual[index]]} />
+    <primitive object={pack} position={individual[index]} />
   ))}
   </>
   )
