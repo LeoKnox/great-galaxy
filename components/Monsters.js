@@ -3,7 +3,7 @@ import * as THREE from "three";
 export default function createMonsters({
   position = [
     [0.5, 0, 0.5],
-    [1.5, 0, 2.5],
+    [2.5, 0, 2.5],
   ],
   rotation = [0, 0, 0],
 } = {}) {
@@ -12,7 +12,7 @@ export default function createMonsters({
   position.forEach(([x,y,z], index) => {
   const monster = new THREE.Group();
 
-  const coneGeometry = new THREE.ConeGeometry(1, 2,8);
+  const coneGeometry = new THREE.ConeGeometry(.5, 1,8);
   const coneMaterial = new THREE.MeshStandardMaterial({
     color: "brown",
   });
