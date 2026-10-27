@@ -24,7 +24,7 @@ export default function createMonsters({
 
   return pack
 });
-//console.log("p "+JSON.stringify(pack))
+console.log("p "+JSON.stringify(pack[0]))
 
   return( 
   <>
