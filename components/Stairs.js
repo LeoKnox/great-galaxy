@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import * as THREE from "three";
 
 export default function Stairs({
-  starLoc,
+  stairLoc,
   roomInfo: {x,y, stairColor},
   color = "gray",
 }) {
