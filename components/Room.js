@@ -105,7 +105,7 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
         position={characterPosition.position}
         rotation={[0, 0, 0]}
       />
-      <Stairs stairLoc={[{x: -3.5, y:-2.5},{x: -1.5, y:-.5}]} roomInfo={{x:-3,y:-2.5, stairColor:"#888888"}} />
+      <Stairs stairLoc={stairsLoc} roomInfo={{x:-3,y:-2.5, stairColor:"#888888"}} />
       <Chest chestObject={{x:1.5,y:2.5, chestColor:"gold", treasure:[1]}}/>
     </>
 
