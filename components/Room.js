@@ -21,13 +21,18 @@ export default function Room({ setCharacterMenu, setShowMenu }) {
       options:["climb",["cover", () => setShowMenu(false)]]
     },
   ];
+  function sameTile(a, b) {
+  return a[0] === b[0] && a[2] === b[2];
+}
 
   function collision(x = -2.5, y = 0, z = -2.5, offsetx, offsety, offsetz) {
     const newPosition = [x + offsetx, y, z + offsetz];
-
-  const stair = stairsLoc.find((stair) =>
+    const stair = stairsLoc.find((stair) =>
+      sameTile(stair.position, newPosition)
+    );
+  /*const stair = stairsLoc.find((stair) =>
     stair.position.every((value, index) => value === newPosition[index])
-  );
+  );*/
   if (stair) {
     setCharacterMenu((currentMenu) => [
       ...new Set([...currentMenu, ...stair.options]),
